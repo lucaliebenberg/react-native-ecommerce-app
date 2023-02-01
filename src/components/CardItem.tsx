@@ -36,7 +36,7 @@ export default CardItem;
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    paddingHorizontal: 26,
+    paddingHorizontal: 23,
   },
   cardWrapper: {
     height: 320,
