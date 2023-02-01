@@ -1,11 +1,19 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+// import screens
+import Home from "../screens/Home";
+import Settings from "../screens/Settings";
 
 const Drawer = () => {
+  const Drawer = createDrawerNavigator();
   return (
-    <View>
-      <Text>Drawer</Text>
-    </View>
+    <Drawer.Navigator>
+      {/* Drawer screens here */}
+      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Settings" component={Settings} />
+    </Drawer.Navigator>
   );
 };
 
