@@ -23,7 +23,7 @@ const CardItem = () => {
             <Entypo name="heart" size={18} color="#DDD" />
           </View>
           <View style={styles.cardBottom}>
-            <Text style={styles.cardDescription}>Pull & bear men's...</Text>
+            <Text style={styles.cardDescription}>Pull & bear men's swe...</Text>
           </View>
         </View>
       </View>
@@ -40,12 +40,12 @@ const styles = StyleSheet.create({
   },
   cardWrapper: {
     height: 320,
-    width: 120,
+    width: 150,
     borderRadius: 8,
   },
   cardImage: {
-    height: 160,
-    width: 120,
+    height: 190,
+    width: 150,
     backgroundColor: "red",
     borderRadius: 8,
   },
