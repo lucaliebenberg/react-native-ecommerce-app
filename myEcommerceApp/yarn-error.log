@@ -1,0 +1,51 @@
+Arguments: 
+  /Users/_lucaliebenberg/.nvm/versions/node/v18.12.0/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/_lucaliebenberg/.rvm/gems/ruby-2.7.6/bin:/Users/_lucaliebenberg/.rvm/gems/ruby-2.7.6@global/bin:/Users/_lucaliebenberg/.rvm/rubies/ruby-2.7.6/bin:/Users/_lucaliebenberg/.docker/bin:/Users/_lucaliebenberg/.nvm/versions/node/v18.12.0/bin:/Users/_lucaliebenberg/.rbenv/shims:/Users/_lucaliebenberg/.rbenv/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/_lucaliebenberg/.rvm/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.12.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: ENOSPC: no space left on device, write
+
+npm manifest: 
+  {
+    "name": "myecommerceapp",
+    "version": "1.0.0",
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web"
+    },
+    "dependencies": {
+      "expo": "~47.0.12",
+      "expo-status-bar": "~1.4.2",
+      "react": "18.1.0",
+      "react-dom": "18.1.0",
+      "react-native": "0.70.5",
+      "react-native-web": "~0.18.9"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.12.9",
+      "@types/react": "~18.0.14",
+      "@types/react-native": "~0.70.6",
+      "typescript": "^4.6.3"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
