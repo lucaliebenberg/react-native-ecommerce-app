@@ -20,7 +20,10 @@ const CardItem = () => {
         <View style={styles.cardContent}>
           <View style={styles.cardTop}>
             <Text style={styles.cardPrice}>$ 26.15</Text>
-            <Entypo name="heart" size={24} color="#DDD" />
+            <Entypo name="heart" size={18} color="#DDD" />
+          </View>
+          <View style={styles.cardBottom}>
+            <Text style={styles.cardDescription}>Pull & bear men's...</Text>
           </View>
         </View>
       </View>
@@ -33,6 +36,7 @@ export default CardItem;
 const styles = StyleSheet.create({
   container: {
     display: "flex",
+    paddingHorizontal: 26,
   },
   cardWrapper: {
     height: 320,
@@ -55,4 +59,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   cardPrice: {},
+  cardBottom: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  cardDescription: {
+    fontSize: 13,
+  },
 });

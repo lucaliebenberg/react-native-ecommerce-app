@@ -23,7 +23,13 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
       <SearchBar />
       <PromotionCard />
       <Tags />
-      <CardItem />
+      <View style={styles.cardContainer}>
+        <View style={styles.cardContainerTitle}>
+          <Text style={styles.cardContainerTitleText}>Popular</Text>
+          <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
+        </View>
+        <CardItem />
+      </View>
     </View>
   );
 };
@@ -33,5 +39,20 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
+  },
+  cardContainer: {},
+  cardContainerTitle: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 26,
+  },
+  cardContainerTitleText: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  cardContainerSeeAllTitle: {
+    fontSize: 12,
   },
 });
