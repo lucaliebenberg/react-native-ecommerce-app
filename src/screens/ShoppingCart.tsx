@@ -1,12 +1,17 @@
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import React from "react";
 
+// import components
+import ShoppingCartCardItem from "../components/ShoppingCartCardItem";
+
 const ShoppingCart = () => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
         <Text style={styles.headerTitle}>Shopping Cart</Text>
-        <View style={styles.cardContainer}></View>
+        <View style={styles.cardContainer}>
+          <ShoppingCartCardItem />
+        </View>
       </View>
     </SafeAreaView>
   );
