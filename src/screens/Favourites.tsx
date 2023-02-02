@@ -12,6 +12,9 @@ const Favourites = () => {
         <Text style={styles.headerTitle}>Saved Items</Text>
         <View style={styles.cardContainer}>
           <SavedCardItem />
+          <SavedCardItem />
+          <SavedCardItem />
+          <SavedCardItem />
         </View>
       </View>
     </SafeAreaView>

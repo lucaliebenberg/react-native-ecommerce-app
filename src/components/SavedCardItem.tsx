@@ -19,12 +19,17 @@ const SavedCardItem = () => {
           <Text style={styles.postTitle}>Men's S sweatshirt</Text>
         </View>
 
-        <View style={styles.postUrlContainer}>
-          <Text style={styles.postUrl}>R550.00</Text>
+        <View style={styles.itemPriceContainer}>
+          <Text style={styles.itemPrice}>R550.00</Text>
           <TouchableOpacity>
-            <Text style={styles.postTime}>
+            <Text style={styles.itemIcons}>
               <Entypo name="shopping-cart" size={18} color="black" />
-              <MaterialCommunityIcons name="delete" size={18} color="black" />
+              <MaterialCommunityIcons
+                style={{ marginLeft: 10 }}
+                name="delete"
+                size={18}
+                color="black"
+              />
             </Text>
           </TouchableOpacity>
         </View>
@@ -43,6 +48,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     display: "flex",
     flexDirection: "row",
+    marginTop: 16,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -64,19 +70,24 @@ const styles = StyleSheet.create({
   postDetailsContainer: {
     padding: 20,
   },
-  postUrlContainer: {
+  itemPriceContainer: {
     display: "flex",
     flexDirection: "row",
   },
-  postUrl: {
-    fontSize: 10,
+  itemPrice: {
+    fontSize: 16,
     color: "grey",
+    paddingTop: 5,
   },
-  postTime: {
-    marginLeft: 42,
+  itemIcons: {
+    marginLeft: 110,
     color: "black",
     fontSize: 8,
     fontWeight: "bold",
+    paddingTop: 5,
+  },
+  itemIcon: {
+    paddingLeft: 5,
   },
   postTitleContainer: {
     paddingTop: 5,
