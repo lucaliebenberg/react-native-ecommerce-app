@@ -18,7 +18,7 @@ const Settings = () => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Text style={styles.headerTitle}>Profile</Text>
+        <Text style={styles.headerTitle}>My Profile</Text>
         <View style={styles.cardContainer}></View>
       </View>
       <View style={styles.profileTopContainer}>
@@ -124,15 +124,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   profileTopImage: {
-    height: 100,
-    width: 100,
+    height: 140,
+    width: 140,
     borderRadius: 100,
     backgroundColor: "black",
     marginBottom: 26,
   },
   profileImage: {
-    height: 100,
-    width: 100,
+    height: 140,
+    width: 140,
     borderRadius: 100,
   },
   profileTopName: {
@@ -154,9 +154,10 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   profileBottomTitle: {
-    fontSize: 20,
+    fontSize: 19,
     color: "black",
     padding: 24,
+    marginTop: 12,
     fontWeight: "bold",
   },
   profileBottomWrapper: {
