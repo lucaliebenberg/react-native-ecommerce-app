@@ -4,11 +4,13 @@ import "react-native-gesture-handler";
 import "react-native-reanimated";
 
 import RootNavigator from "./src/navigation/RootNavigator";
+import LogIn from "./src/screens/LogIn";
 
 export default function App() {
   return (
     <>
-      <RootNavigator />
+      <LogIn />
+      {/* <RootNavigator /> */}
     </>
   );
 }
