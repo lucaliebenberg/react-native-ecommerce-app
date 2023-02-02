@@ -29,7 +29,7 @@ const RootNavigator = () => {
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
-          tabBarActiveTintColor: "yellow",
+          tabBarActiveTintColor: "#3478F6",
           tabBarInactiveTintColor: "#D1D3D2",
           tabBarShowLabel: false,
         }}
@@ -38,22 +38,26 @@ const RootNavigator = () => {
           name="Home"
           component={MainStack}
           options={{
-            tabBarIcon: () => <Entypo name="home" size={24} color="black" />,
+            tabBarIcon: ({ color }) => (
+              <Entypo name="home" size={24} color={color} />
+            ),
           }}
         />
         <Tab.Screen
           name="Favourites"
           component={Favourites}
           options={{
-            tabBarIcon: () => <Entypo name="heart" size={24} color="black" />,
+            tabBarIcon: ({ color }) => (
+              <Entypo name="heart" size={24} color={color} />
+            ),
           }}
         />
         <Tab.Screen
           name="ShoppingCart"
           component={ShoppingCart}
           options={{
-            tabBarIcon: () => (
-              <Entypo name="shopping-cart" size={24} color="black" />
+            tabBarIcon: ({ color }) => (
+              <Entypo name="shopping-cart" size={24} color={color} />
             ),
           }}
         />
@@ -61,8 +65,8 @@ const RootNavigator = () => {
           name="Settings"
           component={Settings}
           options={{
-            tabBarIcon: () => (
-              <Ionicons name="settings-sharp" size={24} color="black" />
+            tabBarIcon: ({ color }) => (
+              <Ionicons name="settings-sharp" size={24} color={color} />
             ),
           }}
         />
