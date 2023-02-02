@@ -5,6 +5,9 @@ const Tags = () => {
   return (
     <ScrollView style={styles.container} horizontal={true}>
       <View style={styles.tagWrapper}>
+        <Text style={styles.tagTitle}>All</Text>
+      </View>
+      <View style={styles.tagWrapper}>
         <Text style={styles.tagTitle}>Jacket</Text>
       </View>
       <View style={styles.tagWrapper}>
