@@ -3,7 +3,9 @@ import React from "react";
 
 // import icons
 import FontAwsome from "react-native-vector-icons/FontAwesome";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Entypo from "react-native-vector-icons/Entypo";
+import Feather from "react-native-vector-icons/Feather";
 
 const Settings = () => {
   return (
@@ -22,13 +24,48 @@ const Settings = () => {
       <View style={styles.profileBottomContainer}>
         <View style={styles.profileBottom}>
           <Text style={styles.profileBottomTitle}>Account Overview</Text>
-          <View style={styles.profileBottomCardContainer}>
-            <View style={styles.profileBottomCardLeft}>
-              <FontAwsome name="user" size={20} color="gray" />
-              <Text style={styles.profileBottomCardTitle}>My Profile</Text>
+          <View style={styles.profileBottomWrapper}>
+            <View style={styles.profileBottomCardContainer}>
+              {/* My Profile */}
+              <View style={styles.profileBottomCardLeft}>
+                <FontAwsome name="user" size={20} color="gray" />
+                <Text style={styles.profileBottomCardTitle}>My Profile</Text>
+              </View>
+              <View style={styles.profileBottomCardRight}>
+                <Entypo name="chevron-right" size={22} color="gray" />
+              </View>
             </View>
-            <View style={styles.profileBottomCardRight}>
-              <Entypo name="chevron-right" size={20} color="gray" />
+            <View style={styles.profileBottomCardContainer}>
+              {/* My Orders */}
+              <View style={styles.profileBottomCardLeft}>
+                <Entypo name="inbox" size={20} color="gray" />
+                <Text style={styles.profileBottomCardTitle}>My Orders</Text>
+              </View>
+              <View style={styles.profileBottomCardRight}>
+                <Entypo name="chevron-right" size={22} color="gray" />
+              </View>
+            </View>
+            <View style={styles.profileBottomCardContainer}>
+              {/* Change Password */}
+              <View style={styles.profileBottomCardLeft}>
+                <FontAwesome5 name="lock" size={20} color="gray" />
+                <Text style={styles.profileBottomCardTitle}>
+                  Change Password
+                </Text>
+              </View>
+              <View style={styles.profileBottomCardRight}>
+                <Entypo name="chevron-right" size={22} color="gray" />
+              </View>
+            </View>
+            <View style={styles.profileBottomCardContainer}>
+              {/* Log Out */}
+              <View style={styles.profileBottomCardLeft}>
+                <Feather name="log-out" size={20} color="gray" />
+                <Text style={styles.profileBottomCardTitle}>Log Out</Text>
+              </View>
+              <View style={styles.profileBottomCardRight}>
+                <Entypo name="chevron-right" size={22} color="gray" />
+              </View>
             </View>
           </View>
         </View>
@@ -85,20 +122,40 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   profileBottom: {
+    display: "flex",
+    flexDirection: "column",
     height: 360,
     width: "100%",
   },
   profileBottomTitle: {
-    fontSize: 18,
+    fontSize: 20,
     color: "black",
     padding: 24,
+    fontWeight: "bold",
+  },
+  profileBottomWrapper: {
+    display: "flex",
+    flexDirection: "column",
+    paddingTop: 12,
   },
   profileBottomCardContainer: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    paddingTop: 12,
+    paddingBottom: 12,
   },
-  profileBottomCardLeft: {},
-  profileBottomCardTitle: {},
-  profileBottomCardRight: {},
+  profileBottomCardLeft: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingLeft: 28,
+  },
+  profileBottomCardTitle: {
+    fontSize: 18,
+    marginLeft: 32,
+  },
+  profileBottomCardRight: {
+    paddingRight: 10,
+  },
 });
