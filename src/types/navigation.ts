@@ -5,6 +5,7 @@ export type MainStackParamList = {
     Home: undefined;
     Details: {title: string};
     Settings: undefined;
+    toggleDrawer: () => void;
 }
 
 export type DetailsScreenRouteProp = RouteProp<MainStackParamList, "Details">

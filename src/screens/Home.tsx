@@ -6,6 +6,7 @@ import {
   ScrollView,
   TouchableOpacity,
   SafeAreaView,
+  TextInput,
 } from "react-native";
 import React from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -33,7 +34,22 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
           })
         }
       /> */}
-        <SearchBar />
+
+        {/* Menu & Search Bar  */}
+        <View style={styles.searchContainer}>
+          <TouchableOpacity
+            onPress={() => navigation.toggleDrawer<MainStackParamList>()}
+          >
+            <Feather
+              name="menu"
+              size={30}
+              color="black"
+              style={styles.searchIcon}
+            />
+          </TouchableOpacity>
+          {/* <Feather style={styles.search} name="search" size={20} color="#CCC" /> */}
+          <TextInput style={styles.searchInput} placeholder="Search..." />
+        </View>
         <PromotionCard />
         <Tags />
 
@@ -79,6 +95,28 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
 export default Home;
 
 const styles = StyleSheet.create({
+  searchContainer: {
+    padding: 20,
+    display: "flex",
+    flexDirection: "row",
+    alignI: "center",
+  },
+  searchInput: {
+    height: 40,
+    width: 300,
+    borderColor: "#CCC",
+    borderWidth: 1,
+    borderRadius: 5,
+    placeholderTextColor: "gray",
+    paddingLeft: 14,
+  },
+  search: {
+    position: "absolute",
+    padding: 30,
+  },
+  searchIcon: {
+    paddingRight: 16,
+  },
   wrapper: {
     backgroundColor: "white",
   },

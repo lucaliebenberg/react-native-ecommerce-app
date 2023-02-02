@@ -1,16 +1,25 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { TextInput } from "react-native-gesture-handler";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { MainStackParamList } from "../types/navigation";
 
 // import icons
 import Feather from "react-native-vector-icons/Feather";
 
 const SearchBar = () => {
   return (
-    <View style={styles.container}>
-      <Feather name="menu" size={30} color="black" style={styles.icon} />
+    <View style={styles.searchContainer}>
+      <TouchableOpacity onPress={() => {}}>
+        <Feather
+          name="menu"
+          size={30}
+          color="black"
+          style={styles.searchIcon}
+        />
+      </TouchableOpacity>
       {/* <Feather style={styles.search} name="search" size={20} color="#CCC" /> */}
-      <TextInput style={styles.input} placeholder="Search..." />
+      <TextInput style={styles.searchInput} placeholder="Search..." />
     </View>
   );
 };
@@ -18,13 +27,13 @@ const SearchBar = () => {
 export default SearchBar;
 
 const styles = StyleSheet.create({
-  container: {
+  searchContainer: {
     padding: 20,
     display: "flex",
     flexDirection: "row",
     alignI: "center",
   },
-  input: {
+  searchInput: {
     height: 40,
     width: 300,
     borderColor: "#CCC",
@@ -37,7 +46,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     padding: 30,
   },
-  icon: {
+  searchIcon: {
     paddingRight: 16,
   },
 });
