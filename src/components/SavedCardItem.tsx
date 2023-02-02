@@ -31,7 +31,6 @@ const SavedCardItem = () => {
         </View>
 
         <View style={styles.itemButtonsContainer}>
-          <Button title="Edit" />
           <Button title="Remove" color={"red"} />
         </View>
       </View>
