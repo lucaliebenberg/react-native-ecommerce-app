@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 40,
   },
   profileTopImage: {
     height: 140,
@@ -146,6 +147,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     height: "100%",
+    backgroundColor: "white",
+    borderRadius: 30,
   },
   profileBottom: {
     display: "flex",
