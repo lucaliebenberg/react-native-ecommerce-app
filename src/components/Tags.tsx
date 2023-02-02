@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
 
 const Tags = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} horizontal={true}>
       <View style={styles.tagWrapper}>
         <Text style={styles.tagTitle}>Jacket</Text>
       </View>
@@ -19,7 +19,7 @@ const Tags = () => {
       <View style={styles.tagWrapper}>
         <Text style={styles.tagTitle}>Shorts</Text>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -30,8 +30,9 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     // padding: 18,
-    paddingHorizontal: 8,
-    paddingVertical: 18,
+    // paddingHorizontal: 8,
+    paddingVertical: 36,
+    height: "100%",
   },
   tagWrapper: {
     height: 34,
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: "gray",
     borderWidth: 0.2,
-    marginLeft: 16,
+    marginLeft: 26,
     justifyContent: "center",
     alignItems: "center",
   },

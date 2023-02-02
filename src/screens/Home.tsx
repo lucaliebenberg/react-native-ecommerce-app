@@ -23,6 +23,7 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
       <SearchBar />
       <PromotionCard />
       <Tags />
+
       {/* Popular section */}
       <View style={styles.cardContainer}>
         <View style={styles.cardContainerTitle}>
