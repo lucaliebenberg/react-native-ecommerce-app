@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import React from "react";
 import { useRoute } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -13,9 +13,9 @@ const Details = ({
   const route = useRoute<DetailsScreenRouteProp>();
 
   return (
-    <View>
+    <SafeAreaView>
       <Text>{route.params.title}</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -11,27 +11,23 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 const CardItem = () => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
-        <View style={styles.cardWrapper}>
-          <View style={styles.cardImage}>
-            <Image
-              style={styles.cardBackground}
-              source={require("../../assets/shopping-item.jpg")}
-            />
+      <View style={styles.cardWrapper}>
+        <View style={styles.cardImage}>
+          <Image
+            style={styles.cardBackground}
+            source={require("../../assets/shopping-item.jpg")}
+          />
+        </View>
+        <View style={styles.cardContent}>
+          <View style={styles.cardTop}>
+            <Text style={styles.cardPrice}>$ 26.15</Text>
+            <Entypo name="heart" size={18} color="#DDD" />
           </View>
-          <View style={styles.cardContent}>
-            <View style={styles.cardTop}>
-              <Text style={styles.cardPrice}>$ 26.15</Text>
-              <Entypo name="heart" size={18} color="#DDD" />
-            </View>
-            <View style={styles.cardBottom}>
-              <Text style={styles.cardDescription}>
-                Pull & bear men's swe...
-              </Text>
-            </View>
+          <View style={styles.cardBottom}>
+            <Text style={styles.cardDescription}>Pull & bear men's swe...</Text>
           </View>
         </View>
-      </TouchableOpacity>
+      </View>
     </View>
   );
 };

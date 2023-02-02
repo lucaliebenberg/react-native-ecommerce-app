@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Button, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { MainStackParamList } from "../types/navigation";
@@ -31,24 +38,32 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
           <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
         </View>
         <View style={styles.cardItemWrapper}>
-          <CardItem />
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("Details", {
+                title: "Details",
+              })
+            }
+          >
+            <CardItem />
+          </TouchableOpacity>
           <CardItem />
           <CardItem />
           <CardItem />
         </View>
+      </View>
 
-        {/* Trending section */}
-        <View style={styles.cardContainer}>
-          <View style={styles.cardContainerTitle}>
-            <Text style={styles.cardContainerTitleText}>Trending</Text>
-            <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
-          </View>
-          <View style={styles.cardItemWrapper}>
-            <CardItem />
-            <CardItem />
-            <CardItem />
-            <CardItem />
-          </View>
+      {/* Trending section */}
+      <View style={styles.cardContainer}>
+        <View style={styles.cardContainerTitle}>
+          <Text style={styles.cardContainerTitleText}>Trending</Text>
+          <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
+        </View>
+        <View style={styles.cardItemWrapper}>
+          <CardItem />
+          <CardItem />
+          <CardItem />
+          <CardItem />
         </View>
       </View>
     </ScrollView>
