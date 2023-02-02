@@ -31,7 +31,6 @@ const RootNavigator = () => {
           headerShown: false,
           tabBarActiveTintColor: "#3478F6",
           tabBarInactiveTintColor: "#D1D3D2",
-          tabBarShowLabel: false,
         }}
       >
         <Tab.Screen
@@ -53,7 +52,7 @@ const RootNavigator = () => {
           }}
         />
         <Tab.Screen
-          name="ShoppingCart"
+          name="Cart"
           component={ShoppingCart}
           options={{
             tabBarIcon: ({ color }) => (

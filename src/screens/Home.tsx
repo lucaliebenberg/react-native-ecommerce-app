@@ -51,19 +51,18 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
           <CardItem />
           <CardItem />
         </View>
-      </View>
-
-      {/* Trending section */}
-      <View style={styles.cardContainer}>
-        <View style={styles.cardContainerTitle}>
-          <Text style={styles.cardContainerTitleText}>Trending</Text>
-          <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
-        </View>
-        <View style={styles.cardItemWrapper}>
-          <CardItem />
-          <CardItem />
-          <CardItem />
-          <CardItem />
+        {/* Trending section */}
+        <View style={styles.cardContainer}>
+          <View style={styles.cardContainerTitle}>
+            <Text style={styles.cardContainerTitleText}>Trending</Text>
+            <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
+          </View>
+          <View style={styles.cardItemWrapper}>
+            <CardItem />
+            <CardItem />
+            <CardItem />
+            <CardItem />
+          </View>
         </View>
       </View>
     </ScrollView>

@@ -11,7 +11,13 @@ import Settings from "../screens/Settings";
 const Drawer = () => {
   const Drawer = createDrawerNavigator();
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator
+      screenOptions={
+        {
+          // headerShown: false,
+        }
+      }
+    >
       {/* Drawer screens here */}
       <Drawer.Screen name="WeBuy" component={Home} />
       <Drawer.Screen name="Favourites" component={Favourites} />

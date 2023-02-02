@@ -9,7 +9,7 @@ const ShoppingCart = () => {
     <SafeAreaView>
       <ScrollView>
         <View style={styles.container}>
-          <Text style={styles.headerTitle}>My Shopping Cart</Text>
+          <Text style={styles.headerTitle}>My Cart</Text>
           <View style={styles.cardContainer}>
             <ShoppingCartCardItem />
             <ShoppingCartCardItem />
