@@ -21,17 +21,20 @@ const SavedCardItem = () => {
 
         <View style={styles.itemPriceContainer}>
           <Text style={styles.itemPrice}>R550.00</Text>
-          <TouchableOpacity>
-            <Text style={styles.itemIcons}>
+
+          <Text style={styles.itemIcons}>
+            <TouchableOpacity>
               <Entypo name="shopping-cart" size={18} color="black" />
+            </TouchableOpacity>
+            <TouchableOpacity>
               <MaterialCommunityIcons
                 style={{ marginLeft: 10 }}
                 name="delete"
                 size={18}
                 color="black"
               />
-            </Text>
-          </TouchableOpacity>
+            </TouchableOpacity>
+          </Text>
         </View>
       </View>
     </View>

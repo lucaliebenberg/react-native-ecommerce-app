@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 
 const PromotionCard = () => {
@@ -8,6 +8,12 @@ const PromotionCard = () => {
         <View style={styles.textContainer}>
           <Text style={styles.textTitle}>Men's Fashion Collection</Text>
           <Text style={styles.textSubtitle}>Discount up to 60%</Text>
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            source={require("../../assets/banner-icon.jpg")}
+            style={styles.image}
+          />
         </View>
       </View>
     </View>
@@ -22,13 +28,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   cardContainer: {
+    display: "flex",
+    flexDirection: "row",
     height: 100,
     width: 350,
     backgroundColor: "black",
     borderRadius: 8,
   },
   textContainer: {
-    padding: 16,
+    paddingTop: 16,
+    paddingLeft: 28,
   },
   textTitle: {
     color: "white",
@@ -40,5 +49,15 @@ const styles = StyleSheet.create({
   textSubtitle: {
     color: "gray",
     fontSize: 12,
+  },
+  imageContainer: {
+    height: "100%",
+    width: "100%",
+    paddingTop: 4,
+    paddingLeft: 72,
+  },
+  image: {
+    width: 96,
+    height: 96,
   },
 });

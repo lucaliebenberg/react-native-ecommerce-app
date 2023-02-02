@@ -3,6 +3,7 @@ import React from "react";
 
 // import icons
 import Entypo from "react-native-vector-icons/Entypo";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 // import images
 // import ItemImage from "../../assets/ecommerce-item.webp";
@@ -10,23 +11,27 @@ import Entypo from "react-native-vector-icons/Entypo";
 const CardItem = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.cardWrapper}>
-        <View style={styles.cardImage}>
-          <Image
-            style={styles.cardBackground}
-            source={require("../../assets/shopping-item.jpg")}
-          />
-        </View>
-        <View style={styles.cardContent}>
-          <View style={styles.cardTop}>
-            <Text style={styles.cardPrice}>$ 26.15</Text>
-            <Entypo name="heart" size={18} color="#DDD" />
+      <TouchableOpacity>
+        <View style={styles.cardWrapper}>
+          <View style={styles.cardImage}>
+            <Image
+              style={styles.cardBackground}
+              source={require("../../assets/shopping-item.jpg")}
+            />
           </View>
-          <View style={styles.cardBottom}>
-            <Text style={styles.cardDescription}>Pull & bear men's swe...</Text>
+          <View style={styles.cardContent}>
+            <View style={styles.cardTop}>
+              <Text style={styles.cardPrice}>$ 26.15</Text>
+              <Entypo name="heart" size={18} color="#DDD" />
+            </View>
+            <View style={styles.cardBottom}>
+              <Text style={styles.cardDescription}>
+                Pull & bear men's swe...
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
