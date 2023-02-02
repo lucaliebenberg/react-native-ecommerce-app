@@ -12,11 +12,9 @@ const Drawer = () => {
   const Drawer = createDrawerNavigator();
   return (
     <Drawer.Navigator
-      screenOptions={
-        {
-          // headerShown: false,
-        }
-      }
+      screenOptions={{
+        headerShown: false,
+      }}
     >
       {/* Drawer screens here */}
       <Drawer.Screen name="WeBuy" component={Home} />

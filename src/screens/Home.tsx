@@ -5,6 +5,7 @@ import {
   Button,
   ScrollView,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
 import React from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -16,10 +17,15 @@ import PromotionCard from "../components/PromotionCard";
 import Tags from "../components/Tags";
 import CardItem from "../components/CardItem";
 
+// import icons
+import Feather from "react-native-vector-icons/Feather";
+import {} from "react-native-safe-area-context";
+
 const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
   return (
-    <ScrollView style={styles.container}>
-      {/* <Button
+    <SafeAreaView style={styles.wrapper}>
+      <ScrollView style={styles.container}>
+        {/* <Button
         title="Go to Details"
         onPress={() =>
           navigation.navigate("Details", {
@@ -27,55 +33,60 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
           })
         }
       /> */}
-      <SearchBar />
-      <PromotionCard />
-      <Tags />
+        <SearchBar />
+        <PromotionCard />
+        <Tags />
 
-      {/* Popular section */}
-      <View style={styles.cardContainer}>
-        <View style={styles.cardContainerTitle}>
-          <Text style={styles.cardContainerTitleText}>Popular</Text>
-          <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
-        </View>
-        <View style={styles.cardItemWrapper}>
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate("Details", {
-                title: "Details",
-              })
-            }
-          >
-            <CardItem />
-          </TouchableOpacity>
-          <CardItem />
-          <CardItem />
-          <CardItem />
-        </View>
-        {/* Trending section */}
+        {/* Popular section */}
         <View style={styles.cardContainer}>
           <View style={styles.cardContainerTitle}>
-            <Text style={styles.cardContainerTitleText}>Trending</Text>
+            <Text style={styles.cardContainerTitleText}>Popular</Text>
             <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
           </View>
           <View style={styles.cardItemWrapper}>
-            <CardItem />
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Details", {
+                  title: "Details",
+                })
+              }
+            >
+              <CardItem />
+            </TouchableOpacity>
             <CardItem />
             <CardItem />
             <CardItem />
           </View>
+          {/* Trending section */}
+          <View style={styles.cardContainer}>
+            <View style={styles.cardContainerTitle}>
+              <Text style={styles.cardContainerTitleText}>Trending</Text>
+              <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
+            </View>
+            <View style={styles.cardItemWrapper}>
+              <CardItem />
+              <CardItem />
+              <CardItem />
+              <CardItem />
+            </View>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
 export default Home;
 
 const styles = StyleSheet.create({
+  wrapper: {
+    backgroundColor: "white",
+  },
   container: {
     backgroundColor: "#fff",
     height: "100%",
     width: "100%",
+    marginTop: 10,
   },
   cardContainer: {
     height: "100%",
