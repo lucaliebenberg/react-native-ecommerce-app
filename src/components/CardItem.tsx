@@ -20,7 +20,7 @@ const CardItem = () => {
         </View>
         <View style={styles.cardContent}>
           <View style={styles.cardTop}>
-            <Text style={styles.cardPrice}>$ 26.15</Text>
+            <Text style={styles.cardPrice}>R550.00</Text>
             <Entypo name="heart" size={18} color="#DDD" />
           </View>
           <View style={styles.cardBottom}>
