@@ -1,6 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { MainStackParamList } from "../types/navigation";
 
 // import screens
 import Home from "../screens/Home";
@@ -8,10 +10,11 @@ import Favourites from "../screens/Favourites";
 import ShoppingCart from "../screens/ShoppingCart";
 import Settings from "../screens/Settings";
 
-const Drawer = () => {
+const Drawer = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
   const Drawer = createDrawerNavigator();
   return (
     <Drawer.Navigator
+      initialRouteName="Home"
       screenOptions={{
         headerShown: false,
       }}

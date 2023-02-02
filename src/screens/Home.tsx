@@ -20,7 +20,6 @@ import CardItem from "../components/CardItem";
 
 // import icons
 import Feather from "react-native-vector-icons/Feather";
-import {} from "react-native-safe-area-context";
 
 const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
   return (
