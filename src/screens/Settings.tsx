@@ -25,7 +25,7 @@ const Settings = () => {
         <View style={styles.profileTop}>
           <View style={styles.profileTopImage}>
             <Image
-              source={require("../../assets/profile-image.jpg")}
+              source={require("../../assets/user-image.jpg")}
               style={styles.profileImage}
             />
           </View>
