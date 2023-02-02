@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   Button,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import { useRoute } from "@react-navigation/native";
@@ -30,7 +31,9 @@ const Details = ({
       <ScrollView>
         <View style={styles.headerContainer}>
           <View style={styles.headerIcon}>
-            <Ionicons name="chevron-back" size={26} color="black" />
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Ionicons name="chevron-back" size={26} color="black" />
+            </TouchableOpacity>
           </View>
           <Text style={styles.headerText}>Details</Text>
         </View>
