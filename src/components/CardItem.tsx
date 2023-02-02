@@ -12,10 +12,10 @@ const CardItem = () => {
     <View style={styles.container}>
       <View style={styles.cardWrapper}>
         <View style={styles.cardImage}>
-          {/* <Image
+          <Image
             style={styles.cardBackground}
-            source={require("../../assets/ecommerce-item.webp")}
-          /> */}
+            source={require("../../assets/shopping-item.jpg")}
+          />
         </View>
         <View style={styles.cardContent}>
           <View style={styles.cardTop}>
@@ -49,7 +49,11 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
     borderRadius: 8,
   },
-  cardBackground: {},
+  cardBackground: {
+    height: 190,
+    width: 150,
+    borderRadius: 8,
+  },
   cardContent: {
     paddingTop: 8,
   },
