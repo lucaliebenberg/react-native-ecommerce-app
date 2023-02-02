@@ -8,7 +8,6 @@ import SearchBar from "../components/SearchBar";
 import PromotionCard from "../components/PromotionCard";
 import Tags from "../components/Tags";
 import CardItem from "../components/CardItem";
-// import { ScrollView } from "react-native-gesture-handler";
 
 const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
   return (
@@ -36,18 +35,21 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
           <CardItem />
           <CardItem />
         </View>
-      </View>
 
-      {/* Trending section
-      <View style={styles.cardContainer}>
-        <View style={styles.cardContainerTitle}>
-          <Text style={styles.cardContainerTitleText}>Trending</Text>
-          <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
+        {/* Trending section */}
+        <View style={styles.cardContainer}>
+          <View style={styles.cardContainerTitle}>
+            <Text style={styles.cardContainerTitleText}>Trending</Text>
+            <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
+          </View>
+          <View style={styles.cardItemWrapper}>
+            <CardItem />
+            <CardItem />
+            <CardItem />
+            <CardItem />
+          </View>
         </View>
-        <View style={styles.cardItemWrapper}>
-          <CardItem />
-        </View>
-      </View> */}
+      </View>
     </ScrollView>
   );
 };
@@ -82,6 +84,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     minWidth: 400,
+    minHeight: 300,
     flexWrap: "wrap",
   },
 });

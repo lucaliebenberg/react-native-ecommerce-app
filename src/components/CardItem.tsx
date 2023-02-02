@@ -65,5 +65,6 @@ const styles = StyleSheet.create({
   },
   cardDescription: {
     fontSize: 13,
+    paddingBottom: 0,
   },
 });
