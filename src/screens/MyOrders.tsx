@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import React from "react";
 import {
-  DetailsScreenRouteProp,
+  MyOrdersScreenRouteProp,
   MainStackParamList,
 } from "../types/navigation";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
