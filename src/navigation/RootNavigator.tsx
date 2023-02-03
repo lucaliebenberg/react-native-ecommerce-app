@@ -35,7 +35,7 @@ const RootNavigator = () => {
           }}
         />
         <Tab.Screen
-          name="Favourites"
+          name="Saved"
           component={Favourites}
           options={{
             tabBarIcon: ({ color }) => (
