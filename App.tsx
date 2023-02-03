@@ -13,11 +13,13 @@ import RootNavigator from "./src/navigation/RootNavigator";
 // import ChangePassword from "./src/screens/ChangePassword";
 // import MyOrders from "./src/screens/MyOrders";
 // import EditProfile from "./src/screens/EditProfile";
+import Welcome from "./src/screens/Welcome";
 
 export default function App() {
   return (
     <Provider store={store}>
-      <RootNavigator />
+      {/* <RootNavigator /> */}
+      <Welcome />
     </Provider>
   );
 }

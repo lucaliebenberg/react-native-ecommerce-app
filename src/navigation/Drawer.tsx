@@ -14,7 +14,6 @@ const Drawer = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
   const Drawer = createDrawerNavigator();
   return (
     <Drawer.Navigator
-      initialRouteName="Home"
       screenOptions={{
         headerShown: false,
       }}
