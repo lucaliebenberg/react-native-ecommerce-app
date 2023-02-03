@@ -27,9 +27,9 @@ const MainStack = () => {
       <Stack.Screen name="Drawer" component={Drawer} />
       <Stack.Screen name="Details" component={Details} />
       <Stack.Screen name="Settings" component={Settings} />
+      <Stack.Screen name="MyOrders" component={MyOrders} />
       <Stack.Screen name="ChangePassword" component={ChangePassword} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
-      <Stack.Screen name="MyOrders" component={MyOrders} />
     </Stack.Navigator>
   );
 };

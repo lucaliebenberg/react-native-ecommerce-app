@@ -44,7 +44,9 @@ const Settings = ({
         <View style={styles.profileBottom}>
           <Text style={styles.profileBottomTitle}>Account Overview</Text>
           <View style={styles.profileBottomWrapper}>
-            <TouchableOpacity onPress={() => navigation.navigate("MyOrders")}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("EditProfile")}
+            >
               <View style={styles.profileBottomCardContainer}>
                 {/* Edit My Profile */}
                 <View style={styles.profileBottomCardLeft}>
