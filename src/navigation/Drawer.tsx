@@ -22,7 +22,7 @@ const Drawer = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
       {/* Drawer screens here */}
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Favourites" component={Favourites} />
-      <Drawer.Screen name="ShoppingCart" component={ShoppingCart} />
+      <Drawer.Screen name="Cart" component={ShoppingCart} />
       <Drawer.Screen name="Settings" component={Settings} />
     </Drawer.Navigator>
   );

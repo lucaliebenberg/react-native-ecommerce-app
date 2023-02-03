@@ -6,13 +6,15 @@ import "react-native-reanimated";
 import RootNavigator from "./src/navigation/RootNavigator";
 import LogIn from "./src/screens/LogIn";
 import SignUp from "./src/screens/SignUp";
+import ChangePassword from "./src/screens/ChangePassword";
 
 export default function App() {
   return (
     <>
       {/* <SignUp /> */}
       {/* <LogIn /> */}
-      <RootNavigator />
+      {/* <RootNavigator /> */}
+      <ChangePassword />
     </>
   );
 }

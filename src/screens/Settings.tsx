@@ -42,7 +42,9 @@ const Settings = () => {
                 {/* My Profile */}
                 <View style={styles.profileBottomCardLeft}>
                   <FontAwsome name="user" size={20} color="gray" />
-                  <Text style={styles.profileBottomCardTitle}>My Profile</Text>
+                  <Text style={styles.profileBottomCardTitle}>
+                    Edit My Profile
+                  </Text>
                 </View>
                 <View style={styles.profileBottomCardRight}>
                   <Entypo name="chevron-right" size={22} color="gray" />

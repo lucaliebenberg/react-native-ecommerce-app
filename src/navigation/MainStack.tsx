@@ -9,6 +9,9 @@ import Home from "../screens/Home";
 import Details from "../screens/Details";
 import Settings from "../screens/Settings";
 import Drawer from "./Drawer";
+import EditProfile from "../screens/EditProfile";
+import ChangePassword from "../screens/ChangePassword";
+import MyOrders from "../screens/MyOrders";
 
 // Stack will receive a MainStackParamList - Type
 const Stack = createNativeStackNavigator<MainStackParamList>();
