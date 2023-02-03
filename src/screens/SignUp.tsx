@@ -14,7 +14,7 @@ import { AuthStackParamList } from "../types/navigation";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 import { StackScreenProps } from "@react-navigation/stack";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth();
 
@@ -25,7 +25,7 @@ const SignUp = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
     error: "",
   });
 
-  async function signIn() {
+  async function signUp() {
     if (value.email === "" || value.password === "") {
       setValue({
         ...value,
@@ -35,7 +35,8 @@ const SignUp = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
     }
 
     try {
-      await signInWithEmailAndPassword(auth, value.email, value.password);
+      await createUserWithEmailAndPassword(auth, value.email, value.password);
+      navigation.navigate("LogIn");
     } catch (error) {
       setValue({
         ...value,
@@ -60,16 +61,24 @@ const SignUp = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
         <TextInput
           style={styles.input}
           placeholder="Email"
+          value={value.email}
           onChangeText={(text) => setValue({ ...value, email: text })}
         />
         <TextInput
           style={styles.input}
           placeholder="Password"
+          value={value.password}
           onChangeText={(text) => setValue({ ...value, password: text })}
-          secureTextEntry
+          secureTextEntry={true}
         />
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={signUp}>
           <Text style={styles.buttonText}>Sign Up</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.link}
+          onPress={() => navigation.navigate("LogIn")}
+        >
+          <Text style={styles.linkText}>Have an account?</Text>
         </TouchableOpacity>
       </View>
     </>
@@ -127,6 +136,19 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
     textAlign: "center",
+  },
+  link: {
+    display: "flex",
+    flexDirection: "row",
+    width: "80%",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    marginLeft: 12,
+    paddingVertical: 10,
+  },
+  linkText: {
+    color: "#E4204C",
+    fontSize: 14,
   },
 });
 

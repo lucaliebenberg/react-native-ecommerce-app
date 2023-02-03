@@ -71,6 +71,12 @@ const LogIn = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Log In</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.link}
+          onPress={() => navigation.navigate("LogIn")}
+        >
+          <Text style={styles.linkText}>Have an account?</Text>
+        </TouchableOpacity>
       </View>
     </>
   );
@@ -127,6 +133,19 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
     textAlign: "center",
+  },
+  link: {
+    display: "flex",
+    flexDirection: "row",
+    width: "80%",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    marginLeft: 12,
+    paddingVertical: 10,
+  },
+  linkText: {
+    color: "#E4204C",
+    fontSize: 14,
   },
 });
 
