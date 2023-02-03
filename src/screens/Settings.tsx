@@ -10,8 +10,11 @@ import React from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import {
   ChangePasswordScreenRouteProp,
-  MainStackParamList,
+  SettingsStackParamList,
+  // MainStackParamList,
 } from "../types/navigation";
+import { useAuth } from "../hooks/useAuth";
+import { getAuth, signOut } from "firebase/auth";
 
 // import icons
 import FontAwsome from "react-native-vector-icons/FontAwesome";
@@ -24,9 +27,11 @@ import EditProfile from "./EditProfile";
 import MyOrders from "./MyOrders";
 import ChangePassword from "./ChangePassword";
 
+const auth = getAuth();
+
 const Settings = ({
   navigation,
-}: NativeStackScreenProps<MainStackParamList>) => {
+}: NativeStackScreenProps<SettingsStackParamList>) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -94,7 +99,7 @@ const Settings = ({
                 </View>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => signOut(auth)}>
               <View style={styles.profileBottomCardContainer}>
                 {/* Log Out */}
                 <View style={styles.profileBottomCardLeft}>

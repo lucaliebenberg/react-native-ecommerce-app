@@ -68,14 +68,14 @@ const LogIn = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
           onChangeText={(text) => setValue({ ...value, password: text })}
           secureTextEntry
         />
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={signIn}>
           <Text style={styles.buttonText}>Log In</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.link}
-          onPress={() => navigation.navigate("LogIn")}
+          onPress={() => navigation.navigate("SignUp")}
         >
-          <Text style={styles.linkText}>Have an account?</Text>
+          <Text style={styles.linkText}>Don't have an account?</Text>
         </TouchableOpacity>
       </View>
     </>
