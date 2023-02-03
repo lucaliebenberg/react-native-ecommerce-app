@@ -7,6 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import Welcome from "../screens/Welcome";
 import SignUpScreen from "../screens/SignUp";
 import LogIn from "../screens/LogIn";
+import OnboardingScreens from "../screens/Onboarding";
 
 // stack navigator
 const Stack = createNativeStackNavigator();
@@ -19,6 +20,7 @@ const AuthStack = () => {
           headerShown: false,
         }}
       >
+        <Stack.Screen name="OnboardingScreens" component={OnboardingScreens} />
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
         <Stack.Screen name="LogIn" component={LogIn} />

@@ -5,6 +5,7 @@ export type MainStackParamList = {
     Home: undefined;
     Details: {title: string};
     Settings: undefined;
+    Onboarding: undefined;
     LogIn: undefined;
     SignUp: undefined;
     toggleDrawer: () => void;
@@ -23,6 +24,19 @@ export type AuthStackParamList = {
     LogIn: undefined;
  }
 
+ export type LoginInNavigationProp = {
+    navigate: any;
+    Onboarding: undefined;
+    Login: undefined;
+ }
+
+ export type OnboardingParamList = {
+    boolean: undefined;
+ }
+
+export type OnboardingScreenRouteProp = RouteProp<MainStackParamList, "Onboarding">
+export type LogInScreenRouteProp = RouteProp<MainStackParamList, "LogIn">
 export type DetailsScreenRouteProp = RouteProp<MainStackParamList, "Details">
 export type ChangePasswordScreenRouteProp = RouteProp<SettingsStackParamList, "ChangePassword">
 export type MyOrdersScreenRouteProp = RouteProp<SettingsStackParamList, "MyOrders">
+
