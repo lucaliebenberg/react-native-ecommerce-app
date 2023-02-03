@@ -13,8 +13,6 @@ const Favourites = () => {
         <View style={styles.cardContainer}>
           <SavedCardItem />
           <SavedCardItem />
-          <SavedCardItem />
-          <SavedCardItem />
         </View>
       </View>
     </SafeAreaView>

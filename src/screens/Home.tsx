@@ -56,7 +56,7 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
         <View style={styles.cardContainer}>
           <View style={styles.cardContainerTitle}>
             <Text style={styles.cardContainerTitleText}>Popular</Text>
-            <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
+            {/* <Text style={styles.cardContainerSeeAllTitle}>See all</Text> */}
           </View>
           <View style={styles.cardItemWrapper}>
             <TouchableOpacity
@@ -68,21 +68,79 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
             >
               <CardItem />
             </TouchableOpacity>
-            <CardItem />
-            <CardItem />
-            <CardItem />
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Details", {
+                  title: "Details",
+                })
+              }
+            >
+              <CardItem />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Details", {
+                  title: "Details",
+                })
+              }
+            >
+              <CardItem />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Details", {
+                  title: "Details",
+                })
+              }
+            >
+              <CardItem />
+            </TouchableOpacity>
           </View>
           {/* Trending section */}
           <View style={styles.cardContainer}>
             <View style={styles.cardContainerTitle}>
               <Text style={styles.cardContainerTitleText}>Trending</Text>
-              <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
+              {/* <Text style={styles.cardContainerSeeAllTitle}>See all</Text> */}
             </View>
             <View style={styles.cardItemWrapper}>
-              <CardItem />
-              <CardItem />
-              <CardItem />
-              <CardItem />
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Details", {
+                    title: "Details",
+                  })
+                }
+              >
+                <CardItem />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Details", {
+                    title: "Details",
+                  })
+                }
+              >
+                <CardItem />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Details", {
+                    title: "Details",
+                  })
+                }
+              >
+                <CardItem />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Details", {
+                    title: "Details",
+                  })
+                }
+              >
+                <CardItem />
+              </TouchableOpacity>
             </View>
           </View>
         </View>

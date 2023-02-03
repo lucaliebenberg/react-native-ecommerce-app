@@ -13,8 +13,6 @@ const ShoppingCart = () => {
           <View style={styles.cardContainer}>
             <ShoppingCartCardItem />
             <ShoppingCartCardItem />
-            <ShoppingCartCardItem />
-            <ShoppingCartCardItem />
           </View>
         </View>
       </ScrollView>

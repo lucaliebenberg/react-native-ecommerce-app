@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   image: {
-    height: 350,
+    height: 420,
     width: 350,
     borderRadius: 10,
   },
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   detailsTitle: {
-    fontSize: 20,
+    fontSize: 21,
     fontWeight: "bold",
     maxWidth: 300,
     padding: 30,
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   },
   detailsDescription: {
     width: "100%",
-    fontSize: 15,
+    fontSize: 18,
   },
   buttonContainer: {
     display: "flex",
@@ -190,5 +190,7 @@ const styles = StyleSheet.create({
     color: "white",
     borderRadius: 10,
     width: "90%",
+    padding: 4,
+    marginBottom: 8,
   },
 });

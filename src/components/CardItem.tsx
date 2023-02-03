@@ -24,7 +24,9 @@ const CardItem = () => {
             <Entypo name="heart" size={18} color="#DDD" />
           </View>
           <View style={styles.cardBottom}>
-            <Text style={styles.cardDescription}>Pull & bear men's swe...</Text>
+            <Text style={styles.cardDescription}>
+              Pull & Bear Men's Fall Urban Collection
+            </Text>
           </View>
         </View>
       </View>
@@ -56,6 +58,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   cardContent: {
+    padding: 2,
     paddingTop: 8,
   },
   cardTop: {
@@ -63,13 +66,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  cardPrice: {},
+  cardPrice: {
+    fontWeight: "bold",
+  },
   cardBottom: {
     display: "flex",
     flexDirection: "row",
   },
   cardDescription: {
     fontSize: 13,
-    paddingBottom: 0,
+    paddingTop: 4,
   },
 });
