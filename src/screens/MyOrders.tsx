@@ -24,7 +24,7 @@ const MyOrders = ({
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
           <Entypo name="chevron-left" size={30} color="black" />
         </TouchableOpacity>
         <Text style={styles.title}>My Orders</Text>

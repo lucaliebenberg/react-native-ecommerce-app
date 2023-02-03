@@ -23,7 +23,7 @@ const ChangePassword = ({
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
           <Entypo name="chevron-left" size={30} color="black" />
         </TouchableOpacity>
         <Text style={styles.text}>Change Password</Text>

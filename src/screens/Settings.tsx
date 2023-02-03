@@ -44,9 +44,9 @@ const Settings = ({
         <View style={styles.profileBottom}>
           <Text style={styles.profileBottomTitle}>Account Overview</Text>
           <View style={styles.profileBottomWrapper}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("MyOrders")}>
               <View style={styles.profileBottomCardContainer}>
-                {/* My Profile */}
+                {/* Edit My Profile */}
                 <View style={styles.profileBottomCardLeft}>
                   <FontAwsome name="user" size={20} color="gray" />
                   <Text style={styles.profileBottomCardTitle}>
@@ -58,7 +58,7 @@ const Settings = ({
                 </View>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("MyOrders")}>
               <View style={styles.profileBottomCardContainer}>
                 {/* My Orders */}
                 <View style={styles.profileBottomCardLeft}>
@@ -71,7 +71,9 @@ const Settings = ({
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("ChangePassword")}
+            >
               <View style={styles.profileBottomCardContainer}>
                 {/* Change Password */}
                 <View style={styles.profileBottomCardLeft}>
@@ -128,7 +130,6 @@ const styles = StyleSheet.create({
   profileTop: {
     height: 240,
     width: "100%",
-    // backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 40,
