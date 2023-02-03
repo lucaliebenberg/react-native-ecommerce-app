@@ -15,14 +15,6 @@ import Settings from "../screens/Settings";
 
 const Tab = createBottomTabNavigator();
 
-// // Tab navigator
-// const TabNavigator = () => {
-//   <Tab.Navigator>
-//     <Tab.Screen name="Home" component={MainStack} />
-//     <Tab.Screen name="Settings" component={Settings} />
-//   </Tab.Navigator>;
-// };
-
 const RootNavigator = () => {
   return (
     <NavigationContainer>
