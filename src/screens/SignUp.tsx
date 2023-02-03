@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  Image,
 } from "react-native";
 
 const SignUpScreen = () => {
@@ -13,32 +14,35 @@ const SignUpScreen = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.headerText}>Sign Up</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Confirm Password"
-        value={confirmPassword}
-        onChangeText={setConfirmPassword}
-        secureTextEntry
-      />
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Sign Up</Text>
-      </TouchableOpacity>
-    </View>
+    <>
+      <View style={styles.container}>
+        <Image style={styles.logo} source={require("../../assets/logo.png")} />
+        <Text style={styles.headerText}>Sign Up</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Confirm Password"
+          value={confirmPassword}
+          onChangeText={setConfirmPassword}
+          secureTextEntry
+        />
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Sign Up</Text>
+        </TouchableOpacity>
+      </View>
+    </>
   );
 };
 
@@ -48,26 +52,34 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  logo: {
+    height: 150,
+    width: 150,
+    marginBottom: 12,
+  },
   headerText: {
-    fontSize: 24,
+    fontSize: 32,
     marginBottom: 30,
   },
   input: {
     width: "80%",
     height: 40,
-    borderColor: "gray",
+    borderColor: "#DDD",
     borderWidth: 1,
     marginBottom: 20,
     padding: 10,
+    borderRadius: 4,
   },
   button: {
-    backgroundColor: "blue",
+    backgroundColor: "#E4204C",
     padding: 10,
     borderRadius: 5,
+    width: 300,
   },
   buttonText: {
     color: "white",
-    fontSize: 18,
+    fontSize: 20,
+    textAlign: "center",
   },
 });
 

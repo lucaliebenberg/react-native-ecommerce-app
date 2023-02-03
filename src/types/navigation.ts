@@ -5,6 +5,8 @@ export type MainStackParamList = {
     Home: undefined;
     Details: {title: string};
     Settings: undefined;
+    LogIn: undefined;
+    SignUp: undefined;
     toggleDrawer: () => void;
 }
 
