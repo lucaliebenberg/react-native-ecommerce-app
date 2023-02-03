@@ -53,11 +53,11 @@ const RootNavigator = () => {
           }}
         />
         <Tab.Screen
-          name="Settings"
+          name="Profile"
           component={Settings}
           options={{
             tabBarIcon: ({ color }) => (
-              <Ionicons name="settings-sharp" size={24} color={color} />
+              <Entypo name="user" size={24} color={color} />
             ),
           }}
         />
