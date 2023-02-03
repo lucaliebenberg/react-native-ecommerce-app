@@ -18,6 +18,10 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth();
 
+export type ErrorResponseData = {
+  message: string;
+};
+
 const LogIn = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
   const [value, setValue] = React.useState({
     email: "",
@@ -39,7 +43,7 @@ const LogIn = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
     } catch (error) {
       setValue({
         ...value,
-        error: error.message,
+        error: (error as ErrorResponseData).message,
       });
     }
   }
