@@ -7,6 +7,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import {
+  ChangePasswordScreenRouteProp,
+  MainStackParamList,
+} from "../types/navigation";
 
 // import icons
 import FontAwsome from "react-native-vector-icons/FontAwesome";
@@ -14,7 +19,9 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Entypo from "react-native-vector-icons/Entypo";
 import Feather from "react-native-vector-icons/Feather";
 
-const Settings = () => {
+const Settings = ({
+  navigation,
+}: NativeStackScreenProps<MainStackParamList>) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>

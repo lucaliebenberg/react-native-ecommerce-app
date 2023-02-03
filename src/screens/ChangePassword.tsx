@@ -8,22 +8,34 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import {
+  DetailsScreenRouteProp,
+  MainStackParamList,
+} from "../types/navigation";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 // import icons
 import Entypo from "react-native-vector-icons/Entypo";
 
-const ChangePassword = () => {
+const ChangePassword = ({
+  navigation,
+}: NativeStackScreenProps<MainStackParamList>) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Entypo name="chevron-left" size={30} color="black" />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Entypo name="chevron-left" size={30} color="black" />
+        </TouchableOpacity>
         <Text style={styles.text}>Change Password</Text>
         <View style={styles.inputsWrapper}>
           <TextInput style={styles.input} placeholder="Current Password" />
           <TextInput style={styles.input} placeholder="New Password" />
           <TextInput style={styles.input} placeholder="Confirm Password" />
         </View>
-        <TouchableOpacity style={styles.button} onPress={() => {}}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("ChangePassword")}
+        >
           <Button title="Change Password" color="white" />
         </TouchableOpacity>
       </View>

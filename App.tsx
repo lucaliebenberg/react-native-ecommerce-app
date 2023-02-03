@@ -7,6 +7,7 @@ import RootNavigator from "./src/navigation/RootNavigator";
 import LogIn from "./src/screens/LogIn";
 import SignUp from "./src/screens/SignUp";
 import ChangePassword from "./src/screens/ChangePassword";
+import MyOrders from "./src/screens/MyOrders";
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
       {/* <SignUp /> */}
       {/* <LogIn /> */}
       {/* <RootNavigator /> */}
-      <ChangePassword />
+      <MyOrders />
     </>
   );
 }
