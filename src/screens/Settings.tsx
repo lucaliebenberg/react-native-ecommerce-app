@@ -19,6 +19,11 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Entypo from "react-native-vector-icons/Entypo";
 import Feather from "react-native-vector-icons/Feather";
 
+// import screens
+import EditProfile from "./EditProfile";
+import MyOrders from "./MyOrders";
+import ChangePassword from "./ChangePassword";
+
 const Settings = ({
   navigation,
 }: NativeStackScreenProps<MainStackParamList>) => {

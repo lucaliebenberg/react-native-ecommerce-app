@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import MainStack from "./MainStack";
+import SettingsStack from "./SettingsStack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // import icons
@@ -54,7 +55,7 @@ const RootNavigator = () => {
         />
         <Tab.Screen
           name="Profile"
-          component={Settings}
+          component={SettingsStack}
           options={{
             tabBarIcon: ({ color }) => (
               <Entypo name="user" size={24} color={color} />

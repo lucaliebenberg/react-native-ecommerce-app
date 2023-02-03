@@ -5,14 +5,18 @@ export type MainStackParamList = {
     Home: undefined;
     Details: {title: string};
     Settings: undefined;
-    EditProfile: undefined;
-    ChangePassword: undefined;
-    MyOrders: undefined;
     LogIn: undefined;
     SignUp: undefined;
     toggleDrawer: () => void;
 }
 
+export type SettingsStackParamList = {
+    Profile: undefined;
+    EditProfile: undefined;
+    ChangePassword: undefined;
+    MyOrders: undefined;
+}
+
 export type DetailsScreenRouteProp = RouteProp<MainStackParamList, "Details">
-export type ChangePasswordScreenRouteProp = RouteProp<MainStackParamList, "ChangePassword">
-export type MyOrdersScreenRouteProp = RouteProp<MainStackParamList, "MyOrders">
+export type ChangePasswordScreenRouteProp = RouteProp<SettingsStackParamList, "ChangePassword">
+export type MyOrdersScreenRouteProp = RouteProp<SettingsStackParamList, "MyOrders">
