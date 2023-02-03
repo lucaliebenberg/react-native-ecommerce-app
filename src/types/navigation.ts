@@ -8,7 +8,6 @@ export type MainStackParamList = {
     EditProfile: undefined;
     ChangePassword: undefined;
     MyOrders: undefined;
-
     LogIn: undefined;
     SignUp: undefined;
     toggleDrawer: () => void;
@@ -16,3 +15,4 @@ export type MainStackParamList = {
 
 export type DetailsScreenRouteProp = RouteProp<MainStackParamList, "Details">
 export type ChangePasswordScreenRouteProp = RouteProp<MainStackParamList, "ChangePassword">
+export type MyOrdersScreenRouteProp = RouteProp<MainStackParamList, "MyOrders">
