@@ -19,7 +19,7 @@ export type SettingsStackParamList = {
 
 export type AuthStackParamList = { 
     Welcome: undefined;
-    Signup: undefined;
+    SignUp: undefined;
     LogIn: undefined;
  }
 
