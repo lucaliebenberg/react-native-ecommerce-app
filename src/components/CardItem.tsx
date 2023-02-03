@@ -10,21 +10,21 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 const CardItem = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.cardWrapper}>
-        <View style={styles.cardImage}>
+    <View style={styles.cardItemcontainer}>
+      <View style={styles.cardItemsWrapper}>
+        <View style={styles.cardItemImage}>
           <Image
-            style={styles.cardBackground}
+            style={styles.cardItemBackground}
             source={require("../../assets/shopping-item.jpg")}
           />
         </View>
-        <View style={styles.cardContent}>
-          <View style={styles.cardTop}>
-            <Text style={styles.cardPrice}>R550.00</Text>
+        <View style={styles.cardItemContent}>
+          <View style={styles.cardItemTop}>
+            <Text style={styles.cardItemPrice}>R550.00</Text>
             <Entypo name="heart" size={18} color="#DDD" />
           </View>
-          <View style={styles.cardBottom}>
-            <Text style={styles.cardDescription}>
+          <View style={styles.cardItemBottom}>
+            <Text style={styles.cardItemDescription}>
               Pull & Bear Men's Fall Urban Collection
             </Text>
           </View>
@@ -37,43 +37,43 @@ const CardItem = () => {
 export default CardItem;
 
 const styles = StyleSheet.create({
-  container: {
+  cardItemcontainer: {
     display: "flex",
     paddingHorizontal: 23,
   },
-  cardWrapper: {
+  cardItemsWrapper: {
     height: 320,
     width: 150,
     borderRadius: 8,
   },
-  cardImage: {
+  cardItemImage: {
     height: 190,
     width: 150,
     backgroundColor: "red",
     borderRadius: 8,
   },
-  cardBackground: {
+  cardItemBackground: {
     height: 190,
     width: 150,
     borderRadius: 8,
   },
-  cardContent: {
+  cardItemContent: {
     padding: 2,
     paddingTop: 8,
   },
-  cardTop: {
+  cardItemTop: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  cardPrice: {
+  cardItemPrice: {
     fontWeight: "bold",
   },
-  cardBottom: {
+  cardItemBottom: {
     display: "flex",
     flexDirection: "row",
   },
-  cardDescription: {
+  cardItemDescription: {
     fontSize: 13,
     paddingTop: 4,
   },

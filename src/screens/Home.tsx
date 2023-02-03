@@ -8,7 +8,7 @@ import {
   SafeAreaView,
   TextInput,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { MainStackParamList } from "../types/navigation";
 
@@ -25,15 +25,6 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <ScrollView style={styles.container}>
-        {/* <Button
-        title="Go to Details"
-        onPress={() =>
-          navigation.navigate("Details", {
-            title: "This is a test",
-          })
-        }
-      /> */}
-
         {/* Menu & Search Bar  */}
         <View style={styles.searchContainer}>
           <TouchableOpacity
