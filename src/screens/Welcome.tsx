@@ -7,8 +7,15 @@ import {
   StyleSheet,
   Image,
 } from "react-native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import {
+  DetailsScreenRouteProp,
+  MainStackParamList,
+} from "../types/navigation";
 
-const Welcome = () => {
+const Welcome = ({
+  navigation,
+}: NativeStackScreenProps<MainStackParamList>) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -19,10 +26,16 @@ const Welcome = () => {
         <Image style={styles.logo} source={require("../../assets/logo.png")} />
         <Text style={styles.headerText}>Welcome</Text>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("LogIn")}
+        >
           <Text style={styles.buttonText}>Log In</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("SignUp")}
+        >
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
       </View>
@@ -35,6 +48,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "white",
   },
   logo: {
     height: 150,
@@ -42,8 +56,8 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   headerText: {
-    fontSize: 24,
-    marginBottom: 30,
+    fontSize: 32,
+    marginBottom: 20,
   },
   input: {
     width: "80%",
@@ -59,6 +73,8 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     width: 300,
+    marginBottom: 20,
+    marginTop: 20,
   },
   buttonText: {
     color: "white",

@@ -17,6 +17,12 @@ export type SettingsStackParamList = {
     MyOrders: undefined;
 }
 
+export type AuthStackParamList = { 
+    Welcome: undefined;
+    Signup: undefined;
+    LogIn: undefined;
+ }
+
 export type DetailsScreenRouteProp = RouteProp<MainStackParamList, "Details">
 export type ChangePasswordScreenRouteProp = RouteProp<SettingsStackParamList, "ChangePassword">
 export type MyOrdersScreenRouteProp = RouteProp<SettingsStackParamList, "MyOrders">
