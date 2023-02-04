@@ -6,9 +6,11 @@ import { MainStackParamList } from "../types/navigation";
 
 // import screens
 import Home from "../screens/Home";
+import MainStack from "./MainStack";
 import Favourites from "../screens/Favourites";
 import ShoppingCart from "../screens/ShoppingCart";
 import Settings from "../screens/Settings";
+import SettingsStack from "./SettingsStack";
 
 const Drawer = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
   const Drawer = createDrawerNavigator();
@@ -16,13 +18,14 @@ const Drawer = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
     <Drawer.Navigator
       screenOptions={{
         headerShown: false,
+        drawerActiveTintColor: "#E4204C",
       }}
     >
       {/* Drawer screens here */}
-      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Home" component={MainStack} />
       <Drawer.Screen name="Saved" component={Favourites} />
       <Drawer.Screen name="Cart" component={ShoppingCart} />
-      <Drawer.Screen name="Profile" component={Settings} />
+      <Drawer.Screen name="Profile" component={SettingsStack} />
     </Drawer.Navigator>
   );
 };

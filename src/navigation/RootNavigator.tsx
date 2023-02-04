@@ -22,7 +22,7 @@ const RootNavigator = () => {
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
-          tabBarActiveTintColor: "#3478F6",
+          tabBarActiveTintColor: "#E4204C",
           tabBarInactiveTintColor: "#D1D3D2",
         }}
       >

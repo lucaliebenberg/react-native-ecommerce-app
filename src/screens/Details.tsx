@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonWrapper: {
-    backgroundColor: "#3478F6",
+    backgroundColor: "#E4204C",
     color: "white",
     borderRadius: 10,
     width: "90%",
