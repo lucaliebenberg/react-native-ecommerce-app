@@ -64,11 +64,13 @@ const LogIn = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
         <TextInput
           style={styles.input}
           placeholder="Email"
+          autoCapitalize="none"
           onChangeText={(text) => setValue({ ...value, email: text })}
         />
         <TextInput
           style={styles.input}
           placeholder="Password"
+          autoCapitalize="none"
           onChangeText={(text) => setValue({ ...value, password: text })}
           secureTextEntry
         />
