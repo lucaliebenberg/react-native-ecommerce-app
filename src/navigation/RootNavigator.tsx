@@ -18,7 +18,7 @@ const Tab = createBottomTabNavigator();
 
 const RootNavigator = () => {
   return (
-    <NavigationContainer>
+    <>
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
@@ -63,7 +63,7 @@ const RootNavigator = () => {
           }}
         />
       </Tab.Navigator>
-    </NavigationContainer>
+    </>
   );
 };
 
