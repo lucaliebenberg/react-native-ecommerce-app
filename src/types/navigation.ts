@@ -24,10 +24,10 @@ export type AuthStackParamList = {
     LogIn: undefined;
  }
 
- export type LoginInNavigationProp = {
+ export type LogInNavigationProp = {
     navigate: any;
     Onboarding: undefined;
-    Login: undefined;
+    LogIn: undefined;
  }
 
  export type OnboardingParamList = {

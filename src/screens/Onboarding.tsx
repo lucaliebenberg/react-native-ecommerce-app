@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 
 import Onboarding from "react-native-onboarding-swiper";
 import { useNavigation } from "@react-navigation/native";
-import { LoginInNavigationProp } from "../types/navigation";
+import { LogInNavigationProp } from "../types/navigation";
 
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import {
@@ -46,19 +46,17 @@ const Done = ({ ...props }) => (
   </TouchableOpacity>
 );
 
-const OnboardingScreens = ({
-  navigation,
-}: NativeStackScreenProps<MainStackParamList>) => {
+const OnboardingScreens = () => {
   const [showOnboard, setShowOnboard] = useState<boolean>(true);
-  //   const navigation = useNavigation<LoginInNavigationProp>();
+  const navigation = useNavigation<LogInNavigationProp>();
 
   const logInUser = () => {
     navigation.navigate("LogIn");
   };
 
-  const handleOnboardFinish = () => {
-    setShowOnboard(false);
-  };
+  // const handleOnboardFinish = () => {
+  //   setShowOnboard(false);
+  // };
 
   return (
     <Onboarding
@@ -69,7 +67,7 @@ const OnboardingScreens = ({
       onSkip={logInUser}
       onDone={logInUser}
       containerStyles={{
-        // backgroundColor: '#fff',
+        backgroundColor: "#fff",
         flex: 0.5,
         justifyContent: "center",
         alignItems: "center",
@@ -126,6 +124,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "white",
   },
   onboardImage: {
     width: 280,
