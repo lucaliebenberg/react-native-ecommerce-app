@@ -16,11 +16,14 @@ import { NavigationContainer } from "@react-navigation/native";
 // import RootNavigator from "./src/navigation/RootNavigator";
 import RootNavigation from "./src/navigation";
 import Onboarding from "./src/screens/Onboarding";
+import AuthProvider from "./src/context/AuthProvider";
 
 const App = ({ navigation }: NativeStackScreenProps<OnboardingParamList>) => {
   return (
     <NavigationContainer>
-      <RootNavigation />
+      <AuthProvider>
+        <RootNavigation />
+      </AuthProvider>
     </NavigationContainer>
   );
 };
