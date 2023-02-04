@@ -13,6 +13,11 @@ import { NavigationContainer } from "@react-navigation/native";
 // import { Provider } from "react-redux";
 // import store from "./src/redux/store";
 
+// import firebase analytics
+// import analytics from '@react-native-firebase/analytics';
+// Log an app_open event
+// analytics().logEvent('app_open');
+
 // import RootNavigator from "./src/navigation/RootNavigator";
 import RootNavigation from "./src/navigation";
 import Onboarding from "./src/screens/Onboarding";
