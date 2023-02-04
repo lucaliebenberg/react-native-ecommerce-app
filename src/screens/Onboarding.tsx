@@ -5,12 +5,6 @@ import Onboarding from "react-native-onboarding-swiper";
 import { useNavigation } from "@react-navigation/native";
 import { LogInNavigationProp } from "../types/navigation";
 
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import {
-  OnboardingScreenRouteProp,
-  MainStackParamList,
-} from "../types/navigation";
-
 const Dots = ({ selected }: any) => {
   let backgroundColor;
 
@@ -47,16 +41,11 @@ const Done = ({ ...props }) => (
 );
 
 const OnboardingScreens = () => {
-  const [showOnboard, setShowOnboard] = useState<boolean>(true);
   const navigation = useNavigation<LogInNavigationProp>();
 
   const logInUser = () => {
-    navigation.navigate("LogIn");
+    navigation.navigate("Welcome");
   };
-
-  // const handleOnboardFinish = () => {
-  //   setShowOnboard(false);
-  // };
 
   return (
     <Onboarding
@@ -84,9 +73,9 @@ const OnboardingScreens = () => {
               style={styles.onboardImage}
             />
           ),
-          title: "Take a picture",
+          title: "Pick Your Style",
           subtitle:
-            "Easily track all your gas purchases by taking a picture of your receipt with Gas Year's simple and convenient camera feature.",
+            "Browse through the variety of products and decide what you like",
         },
         {
           backgroundColor: "white",
@@ -96,9 +85,8 @@ const OnboardingScreens = () => {
               style={styles.onboardImage}
             />
           ),
-          title: "Your personal gas tracker",
-          subtitle:
-            "Never lose track of your gas spending again. Get a clear view of all your purchases in one place with Gas Year's comprehensive history.",
+          title: "Pick Your Size",
+          subtitle: "Choose your favourite color and size ",
         },
         {
           backgroundColor: "white",
@@ -108,9 +96,8 @@ const OnboardingScreens = () => {
               style={styles.onboardImage}
             />
           ),
-          title: "Insightful analytics",
-          subtitle:
-            "Get valuable insights into your gas spending with Gas Year's built-in analytics. Discover where your money is going and make informed decisions about your fuel expenses.",
+          title: "Buy All Online",
+          subtitle: " Purchase all your favourites products online",
         },
       ]}
     />

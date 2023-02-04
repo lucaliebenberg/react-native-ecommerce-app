@@ -18,12 +18,9 @@ import RootNavigation from "./src/navigation";
 import Onboarding from "./src/screens/Onboarding";
 
 const App = ({ navigation }: NativeStackScreenProps<OnboardingParamList>) => {
-  const [showOnboard, setShowOnboard] = useState<boolean>(true);
-
   return (
     <NavigationContainer>
-      {showOnboard && <Onboarding />}
-      {!showOnboard && <RootNavigation />}
+      <RootNavigation />
     </NavigationContainer>
   );
 };
