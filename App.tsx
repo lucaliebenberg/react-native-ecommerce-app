@@ -9,9 +9,14 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { OnboardingParamList } from "./src/types/navigation";
 import { NavigationContainer } from "@react-navigation/native";
 
-// import redux
+// redux persist
+// import {PersistGate} from 'redux-persist/integration/react';
+// import {persistStore} from 'redux-persist';
+
+// redux
 // import { Provider } from "react-redux";
-// import store from "./src/redux/store";
+// import {store} from "./src/redux/store";
+// let persistor = persistStore(store);
 
 // import firebase analytics
 // import analytics from '@react-native-firebase/analytics';

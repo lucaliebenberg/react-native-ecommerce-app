@@ -12,8 +12,12 @@ import ShoppingCart from "../screens/ShoppingCart";
 import Settings from "../screens/Settings";
 import SettingsStack from "./SettingsStack";
 
-const Drawer = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
-  const Drawer = createDrawerNavigator();
+// drawer navigator
+const Drawer = createDrawerNavigator();
+
+const DrawerNavigation = ({
+  navigation,
+}: NativeStackScreenProps<MainStackParamList>) => {
   return (
     <Drawer.Navigator
       screenOptions={{
@@ -30,6 +34,6 @@ const Drawer = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
   );
 };
 
-export default Drawer;
+export default DrawerNavigation;
 
 const styles = StyleSheet.create({});

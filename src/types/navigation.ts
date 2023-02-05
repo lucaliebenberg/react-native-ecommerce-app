@@ -8,7 +8,7 @@ export type MainStackParamList = {
     Onboarding: undefined;
     LogIn: undefined;
     SignUp: undefined;
-    toggleDrawer: () => void;
+    toggleDrawer: () => {};
 }
 
 export type SettingsStackParamList = {
@@ -33,6 +33,15 @@ export type AuthStackParamList = {
  export type OnboardingParamList = {
     boolean: undefined;
  }
+
+ export type ItemProps = {
+    id: number,
+    image: string;
+    title: string;
+    price: number;
+    description: string;
+  };
+  
 
 export type OnboardingScreenRouteProp = RouteProp<MainStackParamList, "Onboarding">
 export type LogInScreenRouteProp = RouteProp<MainStackParamList, "LogIn">

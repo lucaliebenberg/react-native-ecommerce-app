@@ -10,7 +10,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 const CardItem = () => {
   return (
-    <View style={styles.cardItemcontainer}>
+    <View style={styles.cardItemContainer}>
       <View style={styles.cardItemsWrapper}>
         <View style={styles.cardItemImage}>
           <Image
@@ -37,7 +37,7 @@ const CardItem = () => {
 export default CardItem;
 
 const styles = StyleSheet.create({
-  cardItemcontainer: {
+  cardItemContainer: {
     display: "flex",
     paddingHorizontal: 23,
   },
