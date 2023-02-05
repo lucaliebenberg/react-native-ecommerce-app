@@ -1,4 +1,5 @@
 import { RouteProp } from "@react-navigation/native"
+
 import { ImageSourcePropType } from "react-native";
 
 export type MainStackParamList = {
@@ -60,6 +61,7 @@ export type AuthStackParamList = {
     description: string;
     rating: number;
   };
+
   
 
 export type OnboardingScreenRouteProp = RouteProp<MainStackParamList, "Onboarding">
