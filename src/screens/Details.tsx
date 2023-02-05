@@ -41,7 +41,7 @@ const Details = ({
               <Ionicons name="chevron-back" size={26} color="black" />
             </TouchableOpacity>
           </View>
-          <Text style={styles.headerText}>Details</Text>
+          {/* <Text style={styles.headerText}>Details</Text> */}
         </View>
         <View style={styles.imageContainer}>
           <Image source={{ uri: itemImage }} style={styles.image} />
@@ -50,7 +50,7 @@ const Details = ({
           <View style={styles.detailsTitleWrapper}>
             <Text style={styles.detailsTitle}>{itemTitle}</Text>
             <View style={styles.detailsIcon}>
-              <Entypo name="heart" size={28} color="#DDD" />
+              <Entypo name="heart" size={32} color="#DDD" />
             </View>
           </View>
         </View>
@@ -66,7 +66,7 @@ const Details = ({
             <Text style={styles.starText}>4.0</Text>
           </View>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>{itemPrice}</Text>
+            <Text style={styles.price}>R {itemPrice}</Text>
           </View>
         </View>
         <View style={styles.detailsDescriptionContainer}>
@@ -92,22 +92,24 @@ const styles = StyleSheet.create({
   headerContainer: {
     display: "flex",
     flexDirection: "row",
+    alignItems: "center",
     padding: 20,
   },
   headerIcon: {},
   headerText: {
-    fontSize: 18,
+    fontSize: 22,
+    alignItems: "center",
     fontWeight: "bold",
-    paddingLeft: 30,
-    marginLeft: 92,
+    // paddingLeft: 30,
+    // marginLeft: 92,
   },
   imageContainer: {
     justifyContent: "center",
     alignItems: "center",
   },
   image: {
-    height: 420,
-    width: 350,
+    height: 460,
+    width: 360,
     borderRadius: 10,
   },
   detailsTopContainer: {},
@@ -136,12 +138,14 @@ const styles = StyleSheet.create({
   starWrapper: {
     display: "flex",
     flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   star: {
     marginRight: 6,
   },
   starText: {
-    fontSize: 14,
+    fontSize: 18,
     paddingTop: 2.5,
     marginLeft: 4,
   },
@@ -149,7 +153,8 @@ const styles = StyleSheet.create({
     paddingRight: 30,
   },
   price: {
-    fontSize: 16,
+    fontWeight: "bold",
+    fontSize: 18,
   },
   detailsDescriptionContainer: {
     padding: 30,
