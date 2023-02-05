@@ -74,7 +74,7 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
                     <View style={styles.cardItemContent}>
                       <View style={styles.cardItemTop}>
                         <Text style={styles.cardItemPrice}>R {item.price}</Text>
-                        <Entypo name="heart" size={18} color="#DDD" />
+                        <Entypo name="heart" size={23} color="#DDD" />
                       </View>
                       <View style={styles.cardItemBottom}>
                         <Text
@@ -95,13 +95,13 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
     };
 
     return (
-      <>
+      <View>
         <FlatList
           data={Data}
           renderItem={renderHomeItems}
           keyExtractor={(item: ItemProps, index: number) => String(index)}
         />
-      </>
+      </View>
     );
   };
 
@@ -119,10 +119,6 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
 export default Home;
 
 const styles = StyleSheet.create({
-  container: {
-    display: "flex",
-    flexDirection: "row",
-  },
   searchContainer: {
     padding: 20,
     display: "flex",
@@ -145,35 +141,41 @@ const styles = StyleSheet.create({
   searchIcon: {
     paddingRight: 16,
   },
+  container: {
+    display: "flex",
+    alignItems: "center",
+
+    // display: "flex",
+    // flexDirection: "row",
+  },
   cardContainer: {
     display: "flex",
     flexDirection: "column",
+    alignItems: "flex-start",
   },
   cardContainerTitle: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
-    padding: 26,
+    // padding: 26,
   },
   cardContainerTitleText: {
-    fontSize: 13,
+    fontSize: 18,
     fontWeight: "bold",
-    maxWidth: 160,
+    maxWidth: 245,
   },
   cardContainerSeeAllTitle: {
     fontSize: 12,
   },
   cardItemWrapper: {
-    display: "flex",
-    flexDirection: "row",
-    minWidth: 400,
+    alignItems: "flex-start",
+    minWidth: 300,
     minHeight: 300,
     // flexWrap: "wrap",
   },
   cardItemContainer: {
     display: "flex",
-    paddingHorizontal: 23,
+    paddingVertical: 20,
   },
   cardItemsWrapper: {
     height: 320,
@@ -181,14 +183,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   cardItemImage: {
-    height: 170,
-    width: 130,
+    height: 220,
+    width: 180,
     backgroundColor: "red",
     borderRadius: 8,
   },
   cardItemBackground: {
-    height: 170,
-    width: 130,
+    height: 220,
+    width: 180,
     borderRadius: 8,
   },
   cardItemContent: {
@@ -199,16 +201,20 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
+    width: 170,
   },
   cardItemPrice: {
+    fontSize: 17,
     fontWeight: "bold",
   },
   cardItemBottom: {
     display: "flex",
     flexDirection: "row",
+    width: 180,
   },
   cardItemDescription: {
-    fontSize: 12,
+    fontSize: 13,
     paddingTop: 4,
   },
 });
