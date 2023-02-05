@@ -25,6 +25,7 @@ import CardItem from "../components/CardItem";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Entypo from "react-native-vector-icons/Entypo";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 // FlatList prop types
 type FlatListParamList = {
@@ -76,7 +77,7 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
                     <View style={styles.cardItemContent}>
                       <View style={styles.cardItemTop}>
                         <Text style={styles.cardItemPrice}>R {item.price}</Text>
-                        <Entypo name="heart" size={23} color="#DDD" />
+                        {/* <Entypo name="heart" size={23} color="#DDD" /> */}
                       </View>
                       <View style={styles.cardItemBottom}>
                         <Text
@@ -230,7 +231,7 @@ const styles = StyleSheet.create({
   cardItemBottom: {
     display: "flex",
     flexDirection: "row",
-    width: 180,
+    width: 188,
   },
   cardItemDescription: {
     fontSize: 13,
