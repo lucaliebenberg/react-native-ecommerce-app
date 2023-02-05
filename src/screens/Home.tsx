@@ -22,10 +22,9 @@ import Tags from "../components/Tags";
 import CardItem from "../components/CardItem";
 
 // import icons
-import Feather from "react-native-vector-icons/Feather";
-
-// import icons
+import Ionicons from "react-native-vector-icons/Ionicons";
 import Entypo from "react-native-vector-icons/Entypo";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 // FlatList prop types
 type FlatListParamList = {
@@ -46,6 +45,7 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
     const renderHomeItems = ({ item }: { item: ItemProps }) => {
       return (
         <View style={styles.container}>
+          {/* card container below */}
           <View style={styles.cardContainer}>
             <View style={styles.cardContainerTitle}>
               <Text style={styles.cardContainerTitleText}>{item.title}</Text>
@@ -60,6 +60,7 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
                     itemImage: item.image,
                     itemPrice: item.price,
                     itemDescription: item.description,
+                    // itemRating: [item.rating],
                   })
                 }
               >
@@ -70,6 +71,7 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
                         style={styles.cardItemBackground}
                         source={{ uri: item.image }}
                       />
+                      {/* <Text style={styles.cardItemRating}>{item.rating}</Text> */}
                     </View>
                     <View style={styles.cardItemContent}>
                       <View style={styles.cardItemTop}>
@@ -89,6 +91,18 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
                 </View>
               </TouchableOpacity>
             </View>
+          </View>
+          <View style={styles.ratingContainer}>
+            <View style={styles.starWrapper}>
+              <FontAwesome
+                name="star"
+                size={22}
+                color="gold"
+                style={styles.star}
+              />
+              <Text style={styles.ratingText}>4.0</Text>
+            </View>
+            <Entypo name="heart" size={22} color="#DDD" />
           </View>
         </View>
       );
@@ -143,10 +157,8 @@ const styles = StyleSheet.create({
   },
   container: {
     display: "flex",
-    alignItems: "center",
-
-    // display: "flex",
-    // flexDirection: "row",
+    flexDirection: "row",
+    justifyContent: "center",
   },
   cardContainer: {
     display: "flex",
@@ -188,6 +200,13 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
     borderRadius: 8,
   },
+  cardItemRating: {
+    position: "absolute",
+    width: 10,
+    height: 10,
+    backgroundColor: "#E4204C",
+    color: "white",
+  },
   cardItemBackground: {
     height: 220,
     width: 180,
@@ -216,6 +235,17 @@ const styles = StyleSheet.create({
   cardItemDescription: {
     fontSize: 13,
     paddingTop: 4,
+  },
+  ratingContainer: {},
+  ratingText: {},
+  starWrapper: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 2,
+  },
+  star: {
+    marginRight: 6,
   },
 });
 
