@@ -45,72 +45,80 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
   const HomeItems = () => {
     const renderHomeItems = ({ item }: { item: ItemProps }) => {
       return (
-        <>
-          <View style={styles.cardContainerTitle}>
-            <Text style={styles.cardContainerTitleText}>{item.title}</Text>
-          </View>
+        <View style={styles.container}>
+          <View style={styles.cardContainer}>
+            <View style={styles.cardContainerTitle}>
+              <Text style={styles.cardContainerTitleText}>{item.title}</Text>
+            </View>
 
-          <View style={styles.cardItemWrapper}>
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate("Details", {
-                  title: "Details",
-                })
-              }
-            >
-              <View style={styles.cardItemContainer}>
-                <View style={styles.cardItemsWrapper}>
-                  <View style={styles.cardItemImage}>
-                    <Image
-                      style={styles.cardItemBackground}
-                      source={{ uri: item.image }}
-                    />
-                  </View>
-                  <View style={styles.cardItemContent}>
-                    <View style={styles.cardItemTop}>
-                      <Text style={styles.cardItemPrice}>R {item.price}</Text>
-                      <Entypo name="heart" size={18} color="#DDD" />
+            <View style={styles.cardItemWrapper}>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Details", {
+                    title: "Details",
+                  })
+                }
+              >
+                <View style={styles.cardItemContainer}>
+                  <View style={styles.cardItemsWrapper}>
+                    <View style={styles.cardItemImage}>
+                      <Image
+                        style={styles.cardItemBackground}
+                        source={{ uri: item.image }}
+                      />
                     </View>
-                    <View style={styles.cardItemBottom}>
-                      <Text
-                        style={styles.cardItemDescription}
-                        numberOfLines={2}
-                      >
-                        {item.description}
-                      </Text>
+                    <View style={styles.cardItemContent}>
+                      <View style={styles.cardItemTop}>
+                        <Text style={styles.cardItemPrice}>R {item.price}</Text>
+                        <Entypo name="heart" size={18} color="#DDD" />
+                      </View>
+                      <View style={styles.cardItemBottom}>
+                        <Text
+                          style={styles.cardItemDescription}
+                          numberOfLines={2}
+                        >
+                          {item.description}
+                        </Text>
+                      </View>
                     </View>
                   </View>
                 </View>
-              </View>
-            </TouchableOpacity>
+              </TouchableOpacity>
+            </View>
           </View>
-        </>
+        </View>
       );
     };
 
     return (
-      <View>
+      <>
         <FlatList
           data={Data}
           renderItem={renderHomeItems}
           keyExtractor={(item: ItemProps, index: number) => String(index)}
         />
-      </View>
+      </>
     );
   };
 
-  // console.log(renderHomeItems);
-
   return (
-    <View>
+    <SafeAreaView
+      style={{
+        backgroundColor: "white",
+      }}
+    >
       <HomeItems />
-    </View>
+    </SafeAreaView>
   );
 };
 
 export default Home;
 
 const styles = StyleSheet.create({
+  container: {
+    display: "flex",
+    flexDirection: "row",
+  },
   searchContainer: {
     padding: 20,
     display: "flex",
@@ -133,19 +141,9 @@ const styles = StyleSheet.create({
   searchIcon: {
     paddingRight: 16,
   },
-  wrapper: {
-    backgroundColor: "white",
-    width: "100%",
-  },
-  container: {
-    backgroundColor: "#fff",
-    height: "100%",
-    width: "100%",
-    marginTop: 10,
-  },
   cardContainer: {
-    height: "100%",
-    width: "100%",
+    display: "flex",
+    flexDirection: "column",
   },
   cardContainerTitle: {
     display: "flex",
@@ -155,7 +153,7 @@ const styles = StyleSheet.create({
     padding: 26,
   },
   cardContainerTitleText: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: "bold",
     maxWidth: 160,
   },
@@ -179,14 +177,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   cardItemImage: {
-    height: 190,
-    width: 150,
+    height: 170,
+    width: 130,
     backgroundColor: "red",
     borderRadius: 8,
   },
   cardItemBackground: {
-    height: 190,
-    width: 150,
+    height: 170,
+    width: 130,
     borderRadius: 8,
   },
   cardItemContent: {
@@ -206,7 +204,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   cardItemDescription: {
-    fontSize: 13,
+    fontSize: 12,
     paddingTop: 4,
   },
 });
@@ -254,31 +252,4 @@ const styles = StyleSheet.create({
                   </TouchableOpacity>
                 </View>
               </View> */
-}
-
-{
-  /* Menu & Search Bar  */
-}
-{
-  /* <View style={styles.searchContainer}>
-              <TouchableOpacity
-                onPress={() => navigation.toggleDrawer<MainStackParamList>()}
-              >
-                <Feather
-                  name="menu"
-                  size={30}
-                  color="black"
-                  style={styles.searchIcon}
-                />
-              </TouchableOpacity>
-              <Feather
-                style={styles.search}
-                name="search"
-                size={20}
-                color="#CCC"
-              />
-              <TextInput style={styles.searchInput} placeholder="Search..." />
-            </View>
-            <PromotionCard />
-            <Tags /> */
 }
