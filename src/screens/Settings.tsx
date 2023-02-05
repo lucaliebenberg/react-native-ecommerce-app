@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import React from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -32,6 +33,26 @@ const auth = getAuth();
 const Settings = ({
   navigation,
 }: NativeStackScreenProps<SettingsStackParamList>) => {
+  const handlePress = () => {
+    Alert.alert(
+      "Logout",
+      "Are you sure you want to logout?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+        {
+          text: "Confirm",
+          onPress: () => {
+            signOut(auth);
+          },
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -99,7 +120,7 @@ const Settings = ({
                 </View>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => signOut(auth)}>
+            <TouchableOpacity onPress={handlePress}>
               <View style={styles.profileBottomCardContainer}>
                 {/* Log Out */}
                 <View style={styles.profileBottomCardLeft}>

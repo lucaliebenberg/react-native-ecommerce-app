@@ -1,13 +1,23 @@
 import { RouteProp } from "@react-navigation/native"
+import { ImageSourcePropType } from "react-native";
 
 export type MainStackParamList = {
     Drawer: undefined;
     Home: undefined;
-    Details: {title: string};
+    Details: {
+      itemId: number;
+      itemTitle: string;
+      itemImage: string;
+      itemPrice: number;
+      itemDescription: string;
+   };
     Settings: undefined;
     Onboarding: undefined;
     LogIn: undefined;
     SignUp: undefined;
+    navigation: {
+      navigate: (screen: string, params: { item: ItemProps }) => void;
+   };
     toggleDrawer: () => {};
 }
 
@@ -34,9 +44,16 @@ export type AuthStackParamList = {
     boolean: undefined;
  }
 
+ export type Props = {
+   navigation: {
+      navigate: (screen: string, params: { item: ItemProps }) => void;
+   };
+ }
+
  export type ItemProps = {
     id: number,
     image: string;
+    item: ItemProps;
     title: string;
     price: number;
     description: string;

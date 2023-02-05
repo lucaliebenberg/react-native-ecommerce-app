@@ -55,7 +55,11 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
               <TouchableOpacity
                 onPress={() =>
                   navigation.navigate("Details", {
-                    title: "Details",
+                    itemId: item.id,
+                    itemTitle: item.title,
+                    itemImage: item.image,
+                    itemPrice: item.price,
+                    itemDescription: item.description,
                   })
                 }
               >

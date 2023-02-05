@@ -26,6 +26,12 @@ const Details = ({
 }: NativeStackScreenProps<MainStackParamList>) => {
   const route = useRoute<DetailsScreenRouteProp>();
 
+  const itemId = route.params.itemId;
+  const itemTitle = route.params.itemTitle;
+  const itemPrice = route.params.itemPrice;
+  const itemImage = route.params.itemImage;
+  const itemDescription = route.params.itemDescription;
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -38,16 +44,11 @@ const Details = ({
           <Text style={styles.headerText}>Details</Text>
         </View>
         <View style={styles.imageContainer}>
-          <Image
-            source={require("../../assets/shopping-item.jpg")}
-            style={styles.image}
-          />
+          <Image source={{ uri: itemImage }} style={styles.image} />
         </View>
         <View style={styles.detailsTopContainer}>
           <View style={styles.detailsTitleWrapper}>
-            <Text style={styles.detailsTitle}>
-              Pull & Bear Men's Fall Urban Collection
-            </Text>
+            <Text style={styles.detailsTitle}>{itemTitle}</Text>
             <View style={styles.detailsIcon}>
               <Entypo name="heart" size={28} color="#DDD" />
             </View>
@@ -61,38 +62,15 @@ const Details = ({
               color="gold"
               style={styles.star}
             />
-            <FontAwesome
-              name="star"
-              size={22}
-              color="gold"
-              style={styles.star}
-            />
-            <FontAwesome
-              name="star"
-              size={22}
-              color="gold"
-              style={styles.star}
-            />
-            <FontAwesome
-              name="star"
-              size={22}
-              color="gold"
-              style={styles.star}
-            />
+
             <Text style={styles.starText}>4.0</Text>
           </View>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>R550.00</Text>
+            <Text style={styles.price}>{itemPrice}</Text>
           </View>
         </View>
         <View style={styles.detailsDescriptionContainer}>
-          <Text style={styles.detailsDescription}>
-            KONG Puppy toy is customized for a growing puppy’s baby teeth, the
-            unique, natural rubber formula is the most gentle within the KONG
-            rubber toy line. Designed to meet the needs of a puppy’s 28-baby
-            teeth, it helps teach appropriate chewing behavior while offering
-            enrichment and satisfying a younger pup’s instinctual needs.
-          </Text>
+          <Text style={styles.detailsDescription}>{itemDescription}</Text>
         </View>
         <View style={styles.buttonContainer}>
           <View style={styles.buttonWrapper}>
