@@ -22,14 +22,50 @@ import Tags from "../components/Tags";
 import CardItem from "../components/CardItem";
 
 // import icons
-import Ionicons from "react-native-vector-icons/Ionicons";
+import Feather from "react-native-vector-icons/Feather";
 import Entypo from "react-native-vector-icons/Entypo";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+// import { DrawerNavigationState } from "@react-navigation/native";
+import {
+  DrawerStatus,
+  EventMapBase,
+  NavigationHelpers,
+  ParamListBase,
+  TabNavigationState,
+} from "@react-navigation/core";
 
-// FlatList prop types
-type FlatListParamList = {
-  id: string;
+interface DrawerEventMapBase extends EventMapBase {
+  key: string & { data?: any; canPreventDefault?: boolean | undefined };
+}
+
+type DrawerNavigationState<ParamList extends ParamListBase> = Omit<
+  TabNavigationState<ParamList>,
+  "type" | "history"
+> & {
+  type: "drawer";
+  default: DrawerStatus;
+  history: (
+    | {
+        type: "route";
+        key: string;
+      }
+    | {
+        type: "drawer";
+        status: DrawerStatus;
+      }
+  )[];
+} & DrawerEventMapBase;
+
+type DrawerNavigationProp<
+  ParamList extends MainStackParamList,
+  RouteName extends keyof ParamList = keyof ParamList,
+  NavigatorID extends string | undefined = undefined
+> = Omit<
+  NavigationHelpers<ParamList, DrawerNavigationState<ParamList>>,
+  "getParent"
+> & {
+  toggleDrawer: (open?: boolean | undefined) => boolean;
 };
 
 const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
@@ -126,6 +162,25 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
         backgroundColor: "white",
       }}
     >
+      {/* Menu & Search Bar  */}
+      <View style={styles.searchContainer}>
+        <TouchableOpacity
+          onPress={() =>
+            (
+              navigation as unknown as DrawerNavigationProp<MainStackParamList>
+            ).toggleDrawer()
+          }
+        >
+          <Feather
+            name="menu"
+            size={30}
+            color="black"
+            style={styles.searchIcon}
+          />
+        </TouchableOpacity>
+        {/* <Feather style={styles.search} name="search" size={20} color="#CCC" /> */}
+        <TextInput style={styles.searchInput} placeholder="Search..." />
+      </View>
       <HomeItems />
     </SafeAreaView>
   );
@@ -150,8 +205,8 @@ const styles = StyleSheet.create({
     paddingLeft: 14,
   },
   search: {
-    position: "absolute",
-    padding: 30,
+    // position: "absolute",
+    // padding: 30,
   },
   searchIcon: {
     paddingRight: 16,
@@ -160,6 +215,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
+    marginTop: 20,
   },
   cardContainer: {
     display: "flex",
@@ -249,48 +305,3 @@ const styles = StyleSheet.create({
     marginRight: 6,
   },
 });
-
-{
-  /* Trending section */
-}
-{
-  /* <View style={styles.cardContainer}>
-                <View style={styles.cardContainerTitle}>
-                  <Text style={styles.cardContainerTitleText}>
-                    {item.title}
-                  </Text>
-                  <Text style={styles.cardContainerSeeAllTitle}>See all</Text>
-                </View>
-                <View style={styles.cardItemWrapper}>
-                  <TouchableOpacity
-                    onPress={() =>
-                      navigation.navigate("Details", {
-                        title: "Details",
-                      })
-                    }
-                  >
-                    <View style={styles.cardItemContainer}>
-                      <View style={styles.cardItemsWrapper}>
-                        <View style={styles.cardItemImage}>
-                          <Image
-                            style={styles.cardItemBackground}
-                            source={{ uri: item.image }}
-                          />
-                        </View>
-                        <View style={styles.cardItemContent}>
-                          <View style={styles.cardItemTop}>
-                            <Text style={styles.cardItemPrice}>R550.00</Text>
-                            <Entypo name="heart" size={18} color="#DDD" />
-                          </View>
-                          <View style={styles.cardItemBottom}>
-                            <Text style={styles.cardItemDescription}>
-                              Pull & Bear Men's Fall Urban Collection
-                            </Text>
-                          </View>
-                        </View>
-                      </View>
-                    </View>
-                  </TouchableOpacity>
-                </View>
-              </View> */
-}
