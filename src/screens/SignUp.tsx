@@ -31,16 +31,26 @@ const SignUp = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
   });
 
   async function signUp() {
-    if (value.email === "" || value.password === "") {
+    const { email, password } = value;
+
+    if (!email.includes("@") || !email.includes(".")) {
       setValue({
         ...value,
-        error: "Email and password are mandatory.",
+        error: "Please enter a valid email address",
+      });
+      return;
+    }
+
+    if (password.length < 6) {
+      setValue({
+        ...value,
+        error: "Password must be at least 6 characters",
       });
       return;
     }
 
     try {
-      await createUserWithEmailAndPassword(auth, value.email, value.password);
+      await createUserWithEmailAndPassword(auth, email, password);
       navigation.navigate("LogIn");
     } catch (error) {
       setValue({
@@ -49,6 +59,26 @@ const SignUp = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
       });
     }
   }
+
+  // async function signUp() {
+  //   if (value.email === "" || value.password === "") {
+  //     setValue({
+  //       ...value,
+  //       error: "Email and password are mandatory.",
+  //     });
+  //     return;
+  //   }
+
+  //   try {
+  //     await createUserWithEmailAndPassword(auth, value.email, value.password);
+  //     navigation.navigate("LogIn");
+  //   } catch (error) {
+  //     setValue({
+  //       ...value,
+  //       error: (error as ErrorResponseData).message,
+  //     });
+  //   }
+  // }
 
   return (
     <>
