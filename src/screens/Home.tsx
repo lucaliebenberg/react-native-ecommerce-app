@@ -163,7 +163,7 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
       }}
     >
       {/* Menu & Search Bar  */}
-      <View style={styles.searchContainer}>
+      {/* <View style={styles.searchContainer}>
         <TouchableOpacity
           onPress={() =>
             (
@@ -178,9 +178,9 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
             style={styles.searchIcon}
           />
         </TouchableOpacity>
-        {/* <Feather style={styles.search} name="search" size={20} color="#CCC" /> */}
+        <Feather style={styles.search} name="search" size={20} color="#CCC" />
         <TextInput style={styles.searchInput} placeholder="Search..." />
-      </View>
+      </View> */}
       <HomeItems />
     </SafeAreaView>
   );
