@@ -17,6 +17,7 @@ export type MainStackParamList = {
     Onboarding: undefined;
     LogIn: undefined;
     SignUp: undefined;
+    Cart: undefined;
     navigation: {
       navigate: (screen: string, params: { item: ItemProps }) => void;
    };

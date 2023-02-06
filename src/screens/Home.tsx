@@ -156,29 +156,37 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
     );
   };
 
+  if (!Data) {
+    return (
+      <SafeAreaView>
+        <View style={{ display: "flex", justifyContent: "center" }}>
+          {/* Search Bar  */}
+          <View style={styles.searchContainer}>
+            <TextInput style={styles.searchInput} placeholder="Search..." />
+          </View>
+          <Text
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+              fontSize: 22,
+            }}
+          >
+            Loading...
+          </Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
   return (
     <SafeAreaView
       style={{
         backgroundColor: "white",
       }}
     >
-      {/* Menu & Search Bar  */}
+      {/* Search Bar  */}
       <View style={styles.searchContainer}>
-        {/* <TouchableOpacity
-          onPress={() =>
-            (
-              navigation as unknown as DrawerNavigationProp<MainStackParamList>
-            ).toggleDrawer()
-          }
-        >
-          <Feather
-            name="menu"
-            size={30}
-            color="black"
-            style={styles.searchIcon}
-          />
-        </TouchableOpacity>
-        <Feather style={styles.search} name="search" size={20} color="#CCC" /> */}
         <TextInput style={styles.searchInput} placeholder="Search..." />
       </View>
       <HomeItems />
@@ -255,7 +263,7 @@ const styles = StyleSheet.create({
   cardItemImage: {
     height: 220,
     width: 180,
-    backgroundColor: "red",
+    backgroundColor: "#CCC",
     borderRadius: 8,
   },
   cardItemRating: {
@@ -306,3 +314,21 @@ const styles = StyleSheet.create({
     marginRight: 6,
   },
 });
+
+{
+  /* <TouchableOpacity
+          onPress={() =>
+            (
+              navigation as unknown as DrawerNavigationProp<MainStackParamList>
+            ).toggleDrawer()
+          }
+        >
+          <Feather
+            name="menu"
+            size={30}
+            color="black"
+            style={styles.searchIcon}
+          />
+        </TouchableOpacity>
+        <Feather style={styles.search} name="search" size={20} color="#CCC" /> */
+}

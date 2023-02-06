@@ -120,6 +120,7 @@ const Settings = ({
                 </View>
               </View>
             </TouchableOpacity>
+
             <TouchableOpacity onPress={handlePress}>
               <View style={styles.profileBottomCardContainer}>
                 {/* Log Out */}

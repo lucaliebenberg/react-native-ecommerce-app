@@ -7,6 +7,7 @@ import {
   ScrollView,
   Button,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import React from "react";
 import { useRoute } from "@react-navigation/native";
@@ -31,6 +32,47 @@ const Details = ({
   const itemPrice = route.params.itemPrice;
   const itemImage = route.params.itemImage;
   const itemDescription = route.params.itemDescription;
+
+  // create alert
+  // const handlePress = () => {
+  //   Alert.alert(
+  //     "Logout",
+  //     "Are you sure you want to logout?",
+  //     [
+  //       {
+  //         text: "Ok",
+  //         style: "cancel",
+  //       },
+  //       {
+  //         text: "Go to cart",
+  //         onPress: () => {
+  //           navigation.navigate("Cart");
+  //         },
+  //       },
+  //     ],
+  //     { cancelable: false }
+  //   );
+  // };
+
+  const handlePress = () => {
+    Alert.alert(
+      "Added to cart",
+      "Your item has been added to your cart",
+      [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+        {
+          text: "Go to cart",
+          onPress: () => {
+            navigation.navigate("Cart");
+          },
+        },
+      ],
+      { cancelable: false }
+    );
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -73,9 +115,14 @@ const Details = ({
           <Text style={styles.detailsDescription}>{itemDescription}</Text>
         </View>
         <View style={styles.buttonContainer}>
-          <View style={styles.buttonWrapper}>
-            <Button title="Add to cart" color="white" />
-          </View>
+          <TouchableOpacity
+            style={{ width: "100%", alignItems: "center" }}
+            onPress={handlePress}
+          >
+            <View style={styles.buttonWrapper}>
+              <Button title="Add to cart" color="white" />
+            </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
