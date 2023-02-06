@@ -163,8 +163,8 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
       }}
     >
       {/* Menu & Search Bar  */}
-      {/* <View style={styles.searchContainer}>
-        <TouchableOpacity
+      <View style={styles.searchContainer}>
+        {/* <TouchableOpacity
           onPress={() =>
             (
               navigation as unknown as DrawerNavigationProp<MainStackParamList>
@@ -178,9 +178,9 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
             style={styles.searchIcon}
           />
         </TouchableOpacity>
-        <Feather style={styles.search} name="search" size={20} color="#CCC" />
+        <Feather style={styles.search} name="search" size={20} color="#CCC" /> */}
         <TextInput style={styles.searchInput} placeholder="Search..." />
-      </View> */}
+      </View>
       <HomeItems />
     </SafeAreaView>
   );
@@ -192,8 +192,8 @@ const styles = StyleSheet.create({
   searchContainer: {
     padding: 20,
     display: "flex",
-    flexDirection: "row",
     alignItems: "center",
+    width: "100%",
   },
   searchInput: {
     height: 40,
@@ -216,6 +216,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     marginTop: 20,
+    padding: 20,
   },
   cardContainer: {
     display: "flex",
