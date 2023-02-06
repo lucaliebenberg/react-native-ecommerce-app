@@ -33,38 +33,18 @@ const Details = ({
   const itemImage = route.params.itemImage;
   const itemDescription = route.params.itemDescription;
 
-  // create alert
-  // const handlePress = () => {
-  //   Alert.alert(
-  //     "Logout",
-  //     "Are you sure you want to logout?",
-  //     [
-  //       {
-  //         text: "Ok",
-  //         style: "cancel",
-  //       },
-  //       {
-  //         text: "Go to cart",
-  //         onPress: () => {
-  //           navigation.navigate("Cart");
-  //         },
-  //       },
-  //     ],
-  //     { cancelable: false }
-  //   );
-  // };
-
   const handlePress = () => {
     Alert.alert(
       "Added to cart",
       "Your item has been added to your cart",
       [
         {
-          text: "Cancel",
-          style: "cancel",
+          text: "Dismiss",
+          style: "default",
         },
         {
           text: "Go to cart",
+          style: "cancel",
           onPress: () => {
             navigation.navigate("Cart");
           },
@@ -116,7 +96,7 @@ const Details = ({
         </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
-            style={{ width: "100%", alignItems: "center" }}
+            style={{ width: "100%", height: "100%", alignItems: "center" }}
             onPress={handlePress}
           >
             <View style={styles.buttonWrapper}>
@@ -135,6 +115,8 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "column",
+    backgroundColor: "white",
+    paddingBottom: 20,
   },
   headerContainer: {
     display: "flex",

@@ -41,9 +41,10 @@ const LogIn = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
     try {
       await signInWithEmailAndPassword(auth, value.email, value.password);
     } catch (error) {
+      const message = (error as ErrorResponseData).message;
       setValue({
         ...value,
-        error: (error as ErrorResponseData).message,
+        error: message,
       });
     }
   }
@@ -77,6 +78,9 @@ const LogIn = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
         <TouchableOpacity style={styles.button} onPress={signIn}>
           <Text style={styles.buttonText}>Log In</Text>
         </TouchableOpacity>
+        {value.error !== "" && (
+          <Text style={styles.errorMessage}>{value.error}</Text>
+        )}
         <TouchableOpacity
           style={styles.link}
           onPress={() => navigation.navigate("SignUp")}
@@ -139,6 +143,12 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
     textAlign: "center",
+  },
+  errorMessage: {
+    color: "red",
+    fontSize: 16,
+    marginVertical: 10,
+    alignSelf: "center",
   },
   link: {
     display: "flex",

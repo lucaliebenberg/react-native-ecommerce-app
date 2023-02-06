@@ -81,6 +81,9 @@ const SignUp = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
         <TouchableOpacity style={styles.button} onPress={signUp}>
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
+        {value.error !== "" && (
+          <Text style={styles.errorMessage}>{value.error}</Text>
+        )}
         <TouchableOpacity
           style={styles.link}
           onPress={() => navigation.navigate("LogIn")}
@@ -143,6 +146,12 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
     textAlign: "center",
+  },
+  errorMessage: {
+    color: "red",
+    fontSize: 16,
+    marginVertical: 10,
+    alignSelf: "center",
   },
   link: {
     display: "flex",
