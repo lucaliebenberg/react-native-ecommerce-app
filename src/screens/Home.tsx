@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     height: 40,
-    width: 300,
+    width: 330,
     borderColor: "#CCC",
     borderWidth: 1,
     borderRadius: 5,
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
   },
   cardItemPrice: {
     fontSize: 17,
-    fontWeight: "bold",
+    fontWeight: "600",
   },
   cardItemBottom: {
     display: "flex",

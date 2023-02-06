@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   image: {
-    height: 460,
+    height: 520,
     width: 360,
     borderRadius: 10,
   },
@@ -116,17 +116,17 @@ const styles = StyleSheet.create({
   detailsTitleWrapper: {
     display: "flex",
     flexDirection: "row",
+    width: "80%",
   },
   detailsTitle: {
-    fontSize: 21,
+    fontSize: 20,
     fontWeight: "bold",
-    maxWidth: 300,
+    maxWidth: 320,
     padding: 30,
   },
   detailsIconWrapper: {},
   detailsIcon: {
     padding: 30,
-    marginLeft: 26,
   },
   detailsBottomContainer: {
     display: "flex",
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     paddingRight: 30,
   },
   price: {
-    fontWeight: "bold",
+    fontWeight: "600",
     fontSize: 18,
   },
   detailsDescriptionContainer: {
