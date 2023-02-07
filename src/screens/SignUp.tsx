@@ -60,26 +60,6 @@ const SignUp = ({ navigation }: NativeStackScreenProps<AuthStackParamList>) => {
     }
   }
 
-  // async function signUp() {
-  //   if (value.email === "" || value.password === "") {
-  //     setValue({
-  //       ...value,
-  //       error: "Email and password are mandatory.",
-  //     });
-  //     return;
-  //   }
-
-  //   try {
-  //     await createUserWithEmailAndPassword(auth, value.email, value.password);
-  //     navigation.navigate("LogIn");
-  //   } catch (error) {
-  //     setValue({
-  //       ...value,
-  //       error: (error as ErrorResponseData).message,
-  //     });
-  //   }
-  // }
-
   return (
     <>
       <View style={styles.container}>
