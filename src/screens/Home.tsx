@@ -121,11 +121,13 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
                 onPress={() =>
                   navigation.navigate("Details", {
                     itemId: item.id,
+                    itemCategory: item.category,
                     itemTitle: item.title,
                     itemImage: item.image,
                     itemPrice: item.price,
                     itemDescription: item.description,
                     itemRating: item.rating.rate,
+                    itemCount: item.rating.count,
                   })
                 }
               >
@@ -136,17 +138,31 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
                         style={styles.cardItemBackground}
                         source={{ uri: item.image }}
                       />
+
                       {/* <Text style={styles.cardItemRating}>{item.rating}</Text> */}
                     </View>
                     <View style={styles.cardItemContent}>
                       <View style={styles.cardItemTop}>
                         <Text style={styles.cardItemPrice}>R {item.price}</Text>
+                        <View style={styles.ratingContainer}>
+                          <View style={styles.starWrapper}>
+                            <FontAwesome
+                              name="star"
+                              size={22}
+                              color="gold"
+                              style={styles.star}
+                            />
+                            <Text style={styles.ratingText}>
+                              {item.rating.rate}
+                            </Text>
+                          </View>
+                        </View>
                         {/* <Entypo name="heart" size={23} color="#DDD" /> */}
                       </View>
                       <View style={styles.cardItemBottom}>
                         <Text
                           style={styles.cardItemDescription}
-                          numberOfLines={2}
+                          numberOfLines={3}
                         >
                           {item.description}
                         </Text>
@@ -156,8 +172,11 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
                 </View>
               </TouchableOpacity>
             </View>
+            <TouchableOpacity style={styles.buttonContainer}>
+              <Text style={styles.buttonText}>Add to cart</Text>
+            </TouchableOpacity>
           </View>
-          <View style={styles.ratingContainer}>
+          {/* <View style={styles.ratingContainer}>
             <View style={styles.starWrapper}>
               <FontAwesome
                 name="star"
@@ -167,7 +186,7 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
               />
               <Text style={styles.ratingText}>{item.rating.rate}</Text>
             </View>
-          </View>
+          </View> */}
         </View>
       );
     };
@@ -200,7 +219,7 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
-              fontSize: 22,
+              fontSize: 23,
             }}
           >
             Loading...
@@ -255,12 +274,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     marginTop: 20,
+    marginLeft: "auto",
+    marginRight: "auto",
     padding: 20,
+    borderColor: "#CCC",
+    borderWidth: 1,
+    width: "95%",
+    borderRadius: 4,
   },
   cardContainer: {
-    display: "flex",
+    // display: "flex",
     flexDirection: "column",
-    alignItems: "flex-start",
+    // alignItems: "flex-start",
+    alignItems: "center",
   },
   cardContainerTitle: {
     display: "flex",
@@ -272,12 +298,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     maxWidth: 245,
+    textAlign: "center",
   },
   cardContainerSeeAllTitle: {
-    fontSize: 12,
+    fontSize: 13,
   },
   cardItemWrapper: {
-    alignItems: "flex-start",
+    alignItems: "center",
     minWidth: 300,
     minHeight: 300,
     // flexWrap: "wrap",
@@ -288,14 +315,16 @@ const styles = StyleSheet.create({
   },
   cardItemsWrapper: {
     height: 320,
-    width: 150,
+    width: 195,
     borderRadius: 8,
+    alingItems: "center",
   },
   cardItemImage: {
     height: 220,
     width: 180,
     backgroundColor: "#CCC",
     borderRadius: 8,
+    alignItems: "center",
   },
   cardItemRating: {
     position: "absolute",
@@ -327,7 +356,7 @@ const styles = StyleSheet.create({
   cardItemBottom: {
     display: "flex",
     flexDirection: "row",
-    width: 188,
+    width: 186,
   },
   cardItemDescription: {
     fontSize: 13,
@@ -343,6 +372,21 @@ const styles = StyleSheet.create({
   },
   star: {
     marginRight: 6,
+  },
+  buttonContainer: {
+    display: "flex",
+    backgroundColor: "#E4204C",
+    padding: 8,
+    marginLeft: "auto",
+    marginRight: "auto",
+    width: "100%",
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: "white",
+    alignItems: "center",
+    textAlign: "center",
+    fontSize: 18,
   },
 });
 
