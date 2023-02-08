@@ -67,7 +67,6 @@ const Settings = ({
               style={styles.profileImage}
             />
           </View>
-          <Text style={styles.profileTopName}>John Doe</Text>
           <Text style={styles.profileTopEmail}>johndoe@example.com</Text>
         </View>
       </View>
@@ -184,6 +183,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   profileTopEmail: {
+    fontSize: 18,
     marginTop: 8,
     color: "grey",
   },
