@@ -69,14 +69,42 @@ type DrawerNavigationProp<
 };
 
 const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
-  const [Data, setData] = useState();
+  // const [Data, setData] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState("");
+  // const [filteredData, setFilteredData] = useState();
+
+  // useEffect(() => {
+  //   // console.log('cart', cart)
+  //   fetch("https://fakestoreapi.com/products")
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       setData(json)
+  //       setFilteredData(json)
+  //     });
+  // }, []);
+
+  // useEffect(() => {
+  //   setFilteredData(Data.filter((item) => item.name.toLowerCase().includes(searchTerm.toLowerCase())));
+  // })
+
+  const [Data, setData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    // console.log('cart', cart)
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((json) => setData(json));
   }, []);
+
+  const handleSearch = (text: string) => {
+    setSearchTerm(text);
+  };
+
+  const filteredData =
+    Data.filter(
+      (item: ItemProps) =>
+        item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
+    ) || [];
 
   const HomeItems = () => {
     const renderHomeItems = ({ item }: { item: ItemProps }) => {
@@ -97,7 +125,7 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
                     itemImage: item.image,
                     itemPrice: item.price,
                     itemDescription: item.description,
-                    // itemRating: [item.rating],
+                    itemRating: item.rating.rate,
                   })
                 }
               >
@@ -137,9 +165,8 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
                 color="gold"
                 style={styles.star}
               />
-              <Text style={styles.ratingText}>4.0</Text>
+              <Text style={styles.ratingText}>{item.rating.rate}</Text>
             </View>
-            <Entypo name="heart" size={22} color="#DDD" />
           </View>
         </View>
       );
@@ -162,7 +189,11 @@ const Home = ({ navigation }: NativeStackScreenProps<MainStackParamList>) => {
         <View style={{ display: "flex", justifyContent: "center" }}>
           {/* Search Bar  */}
           <View style={styles.searchContainer}>
-            <TextInput style={styles.searchInput} placeholder="Search..." />
+            <TextInput
+              style={styles.searchInput}
+              placeholder="Search..."
+              onChangeText={handleSearch}
+            />
           </View>
           <Text
             style={{

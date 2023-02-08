@@ -11,7 +11,7 @@ export type MainStackParamList = {
       itemImage: string;
       itemPrice: number;
       itemDescription: string;
-      // itemRating: [number];
+      itemRating: Object;
    };
     Settings: undefined;
     Onboarding: undefined;
@@ -60,7 +60,10 @@ export type AuthStackParamList = {
     title: string;
     price: number;
     description: string;
-    rating: number;
+    rating: { 
+      rate: number,
+      count: number,
+    };
   };
 
   
